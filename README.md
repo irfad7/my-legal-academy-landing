@@ -6,7 +6,7 @@ A modern, mobile-responsive landing page for personal injury law firms showcasin
 
 ### **Staging Environment**
 - **Branch**: `staging`
-- **URL**: https://pi-lander-kuokebp7z-irfad7s-projects.vercel.app
+- **URL**: https://pi-lander-staging-4lfcv3gql-irfad7s-projects.vercel.app
 - **Purpose**: Testing and preview before production
 
 ### **Production Environment**
