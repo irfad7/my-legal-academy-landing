@@ -73,6 +73,7 @@ export const AboutUsSection = ({ onShowEmailPopup }: AboutUsSectionProps): JSX.E
                       src={t.image}
                       alt={`${t.name} headshot`}
                       className="h-32 w-32 sm:h-40 sm:w-40 md:h-44 md:w-44 lg:h-56 lg:w-56 object-cover rounded-full"
+                      style={{ objectPosition: 'center 30%' }}
                     />
                   </div>
 

@@ -1,7 +1,8 @@
 import { UTMParams, getUTMParams } from '../utils/utmTracking';
 import { trackEmailSubmission } from '../utils/analytics';
 
-const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/522295/uhnr1x6/';
+// Local API endpoint for email submission
+const API_ENDPOINT = '/api/submit-email';
 
 export interface EmailSubmission {
   email: string;
@@ -21,8 +22,8 @@ export interface ApiResponse<T = any> {
   error?: string;
 }
 
-// Function to send webhook to Zapier
-async function sendZapierWebhook(submission: EmailSubmission): Promise<boolean> {
+// Function to send email via local API
+async function sendEmailViaAPI(submission: EmailSubmission): Promise<boolean> {
   try {
     const webhookData = {
       email: submission.email,
@@ -33,7 +34,9 @@ async function sendZapierWebhook(submission: EmailSubmission): Promise<boolean> 
       utm_content: submission.utm_content || '',
     };
 
-    const response = await fetch(ZAPIER_WEBHOOK_URL, {
+    console.log('Sending email data via API:', webhookData);
+
+    const response = await fetch(API_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,16 +44,18 @@ async function sendZapierWebhook(submission: EmailSubmission): Promise<boolean> 
       body: JSON.stringify(webhookData),
     });
 
+    console.log('API response status:', response.status);
+
     if (!response.ok) {
-      console.error('Zapier webhook failed:', response.status, response.statusText);
+      console.error('API call failed:', response.status, response.statusText);
       return false;
     }
 
     const result = await response.json();
-    console.log('Zapier webhook success:', result);
-    return true;
+    console.log('API call success:', result);
+    return result.success;
   } catch (error) {
-    console.error('Zapier webhook error:', error);
+    console.error('API call error:', error);
     return false;
   }
 }
@@ -67,23 +72,29 @@ export class EmailService {
         ...utmParams,
       };
 
-      // Send webhook to Zapier (fire and forget)
-      sendZapierWebhook(submission).then(success => {
-        if (success) {
-          console.log('Zapier webhook sent successfully for:', email);
-        } else {
-          console.error('Zapier webhook failed for:', email);
-        }
-      });
+      console.log('Submitting email:', submission);
 
-      // Track successful email submission
-      trackEmailSubmission(source || 'landing-page', email);
+      // Send email via local API
+      const apiSuccess = await sendEmailViaAPI(submission);
+      
+      if (apiSuccess) {
+        console.log('Email submitted successfully via API for:', email);
+        
+        // Track successful email submission
+        trackEmailSubmission(source || 'landing-page', email);
 
-      return {
-        success: true,
-        message: 'Email submitted successfully',
-        data: { email }
-      };
+        return {
+          success: true,
+          message: 'Email submitted successfully',
+          data: { email }
+        };
+      } else {
+        console.error('API call failed for:', email);
+        return {
+          success: false,
+          message: 'Failed to submit email - API error',
+        };
+      }
     } catch (error) {
       console.error('Email submission error:', error);
       return {
