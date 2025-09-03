@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AboutUsSection } from "./sections/AboutUsSection/AboutUsSection";
 import { CallToActionSection } from "./sections/CallToActionSection/CallToActionSection";
 import { FeaturedCasesSection } from "./sections/FeaturedCasesSection/FeaturedCasesSection";
@@ -14,11 +14,17 @@ import { FAQSection } from "./sections/FAQSection/FAQSection";
 import { Facebook, Instagram, Youtube, Linkedin } from "lucide-react";
 import { EmailPopup } from "../../components/ui/EmailPopup";
 import logo from '../../assets/images/new-logo.webp';
+import { trackPageView } from "../../utils/analytics";
 
 
 export const HomePage = (): JSX.Element => {
   const [showBanner, setShowBanner] = useState(false);
   const [showEmailPopup, setShowEmailPopup] = useState(false);
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView('PI Track Landing Page');
+  }, []);
 
   const handleEmailSubmit = (email: string) => {
     // Here you could log the email or send it to your analytics

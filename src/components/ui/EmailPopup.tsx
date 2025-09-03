@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { X, Mail, ArrowRight } from "lucide-react";
+import { X, Mail, ArrowRight, AlertCircle } from "lucide-react";
 import { Button } from "./button";
 import { Input } from "./input";
+import { EmailService } from "../../services/EmailService";
 
 interface EmailPopupProps {
   isOpen: boolean;
@@ -17,14 +18,16 @@ export const EmailPopup: React.FC<EmailPopupProps> = ({
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
     
     if (!validateEmail(email)) {
       setIsValid(false);
@@ -34,16 +37,29 @@ export const EmailPopup: React.FC<EmailPopupProps> = ({
     setIsSubmitting(true);
     setIsValid(true);
     
-    // Small delay to show loading state
-    setTimeout(() => {
-      onSubmit(email);
+    try {
+      // Submit to backend API
+      const result = await EmailService.submitEmail(email, "popup-form");
+      
+      if (result.success) {
+        onSubmit(email);
+        setIsSubmitting(false);
+        setEmail("");
+        onClose();
+      } else {
+        setError(result.message || "Failed to submit email");
+        setIsSubmitting(false);
+      }
+    } catch (err) {
+      setError("An unexpected error occurred");
+      console.error("Email submission error:", err);
       setIsSubmitting(false);
-      setEmail("");
-    }, 500);
+    }
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+    setError("");
     if (!isValid && validateEmail(e.target.value)) {
       setIsValid(true);
     }
@@ -85,6 +101,7 @@ export const EmailPopup: React.FC<EmailPopupProps> = ({
                 value={email}
                 onChange={handleEmailChange}
                 placeholder="Enter your email address"
+                disabled={isSubmitting}
                 className={`h-12 text-base border-2 ${
                   !isValid ? "border-red-500" : "border-[#d5d5d5]"
                 } rounded-[4px] [font-family:'Inter',Helvetica] px-4 focus:border-[#0e823e] focus:outline-none`}
@@ -95,12 +112,18 @@ export const EmailPopup: React.FC<EmailPopupProps> = ({
                   Please enter a valid email address
                 </p>
               )}
+              {error && (
+                <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">
+                  <AlertCircle className="w-4 h-4" />
+                  <span>{error}</span>
+                </div>
+              )}
             </div>
 
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-12 bg-[#0e823e] hover:bg-[#0c7236] text-white text-lg [font-family:'Playfair_Display',serif] font-medium rounded-[3px] border border-[#00000021] shadow-[0px_4px_16px_2px_#002c7a33] flex items-center justify-center gap-2"
+              className="w-full h-12 bg-[#0e823e] hover:bg-[#0c7236] disabled:bg-gray-400 text-white text-lg [font-family:'Playfair_Display',serif] font-medium rounded-[3px] border border-[#00000021] shadow-[0px_4px_16px_2px_#002c7a33] flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 "Processing..."
