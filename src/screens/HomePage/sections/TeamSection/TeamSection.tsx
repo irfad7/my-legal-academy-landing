@@ -7,7 +7,7 @@ import jamie from '../../../../assets/images/jamie.png';
 import tim from '../../../../assets/images/tim.png';
 import malik from '../../../../assets/images/malik.png';
 import brittani from '../../../../assets/images/Brittani.png';
-import byron from '../../../../assets/images/byron.png';
+import byron from '../../../../assets/images/Byron.png';
 
 const testimonialData = [
   {
