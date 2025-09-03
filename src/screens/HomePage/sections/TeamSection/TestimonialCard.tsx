@@ -73,8 +73,8 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
       <CardContent className="p-0">
         {/* Mobile Layout - Image at top */}
         <div className="block lg:hidden">
-          <div className="flex flex-col items-center gap-6 p-4">
-            <div className="relative w-full h-[350px] flex-shrink-0 flex flex-col items-center justify-center group">
+          <div className="flex flex-col items-center p-4">
+            <div className="relative w-full h-[350px] flex-shrink-0 flex flex-col items-center justify-center group mb-4">
               {imageSrc ? (
                 <div className="flex flex-col justify-center items-center w-full h-full">
                   <img
@@ -95,11 +95,11 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
             </div>
 
             {/* Name and Location - Outside image container */}
-            <div className="text-center w-full">
+            <div className="text-center w-full mb-8">
               <div className="[font-family:'Inter',Helvetica] font-semibold text-[#0e823e] text-xl leading-tight tracking-wide">
                 {name}
               </div>
-              <div className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-base leading-tight mt-2 mb-6">
+              <div className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-base leading-tight mt-2">
                 {location}
               </div>
             </div>
