@@ -46,6 +46,11 @@ export const EmailPopup: React.FC<EmailPopupProps> = ({
         setIsSubmitting(false);
         setEmail("");
         onClose();
+        
+        // Redirect to JotForm after a short delay
+        setTimeout(() => {
+          window.open('https://form.jotform.com/252374559938069', '_blank');
+        }, 1000);
       } else {
         setError(result.message || "Failed to submit email");
         setIsSubmitting(false);

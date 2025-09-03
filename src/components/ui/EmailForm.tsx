@@ -40,15 +40,19 @@ export const EmailForm: React.FC<EmailFormProps> = ({
       const result = await EmailService.submitEmail(email, source);
       
       if (result.success) {
-        setIsSubmitted(true);
         onSubmit?.(email);
         
-        // Redirect to JotForm after a short delay
-        setTimeout(() => {
+        // For hero form, redirect immediately without delay or success message
+        if (source === "hero-form") {
           window.open('https://form.jotform.com/252374559938069', '_blank');
-        }, 1000);
-        
-        setTimeout(() => setIsSubmitted(false), 3000);
+        } else {
+          // For other forms, show success message and redirect with delay
+          setIsSubmitted(true);
+          setTimeout(() => {
+            window.open('https://form.jotform.com/252374559938069', '_blank');
+          }, 1000);
+          setTimeout(() => setIsSubmitted(false), 3000);
+        }
       } else {
         setError(result.message || "Failed to submit email");
       }

@@ -9,6 +9,12 @@ const bulletPoints = [
 ];
 
 export const CallToActionSection = (): JSX.Element => {
+  const handleEmailSubmit = (email: string) => {
+    // Email submission is handled by EmailForm component
+    // UTM params are captured and webhook is sent automatically
+    console.log('Hero form email submitted:', email);
+  };
+
   return (
     <section className="relative w-full py-8 md:py-12">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -42,7 +48,8 @@ export const CallToActionSection = (): JSX.Element => {
           {/* Email Form */}
           <EmailForm 
             className="mt-12"
-            onSubmit={(email) => console.log('Email submitted:', email)}
+            source="hero-form"
+            onSubmit={handleEmailSubmit}
           />
 
           {/* Bullet Points */}
@@ -59,11 +66,11 @@ export const CallToActionSection = (): JSX.Element => {
           </div>
           
           {/* Desktop Layout */}
-          <div className="hidden lg:flex flex-col items-start space-y-4 mt-6 mb-0 px-4">
+          <div className="hidden lg:flex flex-col items-start space-y-4 mt-6 mb-0 px-4 w-full max-w-3xl">
             {bulletPoints.map((point, index) => (
-              <div key={index} className="flex items-start gap-3 w-full justify-start">
-                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#0c0c0c] text-[24px] leading-relaxed text-left">
+              <div key={index} className="flex items-start gap-3 w-full">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                <span className="[font-family:'Inter',Helvetica] font-normal text-[#0c0c0c] text-[20px] leading-relaxed text-left">
                   {point}
                 </span>
               </div>

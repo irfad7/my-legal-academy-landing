@@ -16,21 +16,8 @@ const emailSchema = z.object({
 // Zapier webhook URL
 const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/522295/uhnr1x6/';
 
-// In-memory storage (replace with database in production)
-const emailSubmissions: Array<{
-  email: string;
-  source?: string;
-  timestamp: string;
-  id: string;
-  utm_source?: string;
-  utm_medium?: string;
-  utm_campaign?: string;
-  utm_term?: string;
-  utm_content?: string;
-}> = [];
-
 // Function to send webhook to Zapier
-async function sendZapierWebhook(submission) {
+async function sendZapierWebhook(submission: any) {
   try {
     const webhookData = {
       email: submission.email,
@@ -79,30 +66,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method === 'POST') {
       const { email, source, utm_source, utm_medium, utm_campaign, utm_term, utm_content } = emailSchema.parse(req.body);
       
-      // Check if email already exists
-      const existingSubmission = emailSubmissions.find(sub => sub.email === email);
-      if (existingSubmission) {
-        return res.status(409).json({
-          success: false,
-          message: 'Email already submitted',
-          data: { email }
-        });
-      }
-
-      // Create new submission
+      // Create submission object
       const submission = {
         email,
         source: source || 'landing-page',
         timestamp: new Date().toISOString(),
-        id: Math.random().toString(36).substr(2, 9),
         utm_source,
         utm_medium,
         utm_campaign,
         utm_term,
         utm_content,
       };
-
-      emailSubmissions.push(submission);
 
       // Log submission
       console.log('New email submission:', submission);
@@ -119,14 +93,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(201).json({
         success: true,
         message: 'Email submitted successfully',
-        data: { email, id: submission.id }
-      });
-
-    } else if (req.method === 'GET') {
-      return res.json({
-        success: true,
-        data: emailSubmissions,
-        count: emailSubmissions.length
+        data: { email }
       });
 
     } else {
