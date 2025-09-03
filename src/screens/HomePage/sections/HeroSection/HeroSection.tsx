@@ -6,8 +6,8 @@ import imagev1 from '../../../../assets/images/image v1.png';
 import imagev2 from '../../../../assets/images/image v2.png';
 import imagev3 from '../../../../assets/images/image v3.png';
 import imagev4 from '../../../../assets/images/image v4.png';
-import imagev5 from '../../../../assets/images/Image v5.png';
-import imagev6 from '../../../../assets/images/Image v6.png';
+import imagev5 from '../../../../assets/images/image v5.png';
+import imagev6 from '../../../../assets/images/image v6.png';
 
 interface HeroSectionProps {
   onShowEmailPopup: () => void;
