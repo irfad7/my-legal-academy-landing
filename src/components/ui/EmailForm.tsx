@@ -14,7 +14,7 @@ interface EmailFormProps {
 
 export const EmailForm: React.FC<EmailFormProps> = ({
   onSubmit,
-  buttonText = "See If You Qualify Now",
+  buttonText = "See If You Qualify",
   placeholder = "Enter Your Email Address",
   className = "",
   source = "hero-form",

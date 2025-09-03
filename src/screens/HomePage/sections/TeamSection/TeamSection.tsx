@@ -6,6 +6,9 @@ import bridgette from '../../../../assets/images/bridgette.png';
 import jamie from '../../../../assets/images/jamie.png';
 import tim from '../../../../assets/images/tim.png';
 import malik from '../../../../assets/images/malik.png';
+import brittani from '../../../../assets/images/Brittani.png';
+import byron from '../../../../assets/images/byron.png';
+
 const testimonialData = [
   {
     name: "Demarcus Ward, Esq.",
@@ -20,20 +23,7 @@ const testimonialData = [
     roi: "630%",
     imagePosition: "right" as const,
     imageSrc: mckinny,
-  },
-  {
-    name: "Jose Escobar, Esq.",
-    location: "Dallas, Texas",
-    achievement: "$150,000 in 5 months",
-    quote:
-      "Our firm hired My Legal Academy to help with our firm's Facebook advertising, and the results have been outstanding. Their team is knowledgeable, responsive, and truly understands the legal industry.",
-    timeFrame: "5 Months",
-    signedClients: "25",
-    revenue: "$150,000",
-    costPerAcquisition: "$993",
-    roi: "504%",
-    imagePosition: "left" as const,
-    imageSrc: dallas,
+    caseStudyCategory: "Personal Injury, criminal defense, business.",
   },
   {
     name: "Bridgette Williams, Esq.",
@@ -46,8 +36,24 @@ const testimonialData = [
     revenue: "$240,000",
     costPerAcquisition: "$856",
     roi: "600%",
-    imagePosition: "right" as const,
+    imagePosition: "left" as const,
     imageSrc: bridgette,
+    caseStudyCategory: "Personal injury, car accidents, slip and falls",
+  },
+  {
+    name: "Jose Escobar, Esq.",
+    location: "Dallas, Texas",
+    achievement: "$150,000 in 5 months",
+    quote:
+      "Our firm hired My Legal Academy to help with our firm's Facebook advertising, and the results have been outstanding. Their team is knowledgeable, responsive, and truly understands the legal industry.",
+    timeFrame: "5 Months",
+    signedClients: "25",
+    revenue: "$150,000",
+    costPerAcquisition: "$993",
+    roi: "504%",
+    imagePosition: "right" as const,
+    imageSrc: dallas,
+    caseStudyCategory: "Wrongful Death, Car Accident, and more.",
   },
   {
     name: "Jamie Alvarez, Esq.",
@@ -61,14 +67,15 @@ const testimonialData = [
     costPerAcquisition: "$1,466",
     roi: "354%",
     imagePosition: "left" as const,
-    imageSrc: jamie ,
+    imageSrc: jamie,
+    caseStudyCategory: "Property insurance and Personal injury claims",
   },
   {
     name: "Tim Dominguez, Esq.",
     location: "Irvine, California",
     achievement: "9 new cases in 30 days",
     quote:
-      "Tim proved that precision beats guesswork-9 signed cases in 30 days, generating a 789% ROI. That's the power of phased execution. It's not about spending more-it's about spending smart. Tim closed 9 cases in one month with a 789% ROI.",
+      "Precision beats guesswork - 9 signed cases in 30 days, generating a 789% ROI. That's the power of phased execution. It's not about spending more - it's about spending smart.",
     timeFrame: "30 Days",
     signedClients: "9",
     revenue: "$72,000",
@@ -76,20 +83,50 @@ const testimonialData = [
     roi: "789%",
     imagePosition: "right" as const,
     imageSrc: tim,
+    caseStudyCategory: "Personal Injury, car, truck, rideshare",
+  },
+  {
+    name: "Brittani Glidden, Esq.",
+    location: "Denver, Colorado",
+    achievement: "15 new cases in 4 weeks",
+    quote:
+      "Stopped guessing and started following the process. Only 4 short weeks later, 15 clients had already signed up — proof the systems were finally doing the heavy lifting.",
+    timeFrame: "4 Weeks",
+    signedClients: "15",
+    costPerAcquisition: "$291",
+    imagePosition: "left" as const,
+    imageSrc: brittani,
+    caseStudyCategory: "PI, criminal, family, immigration.",
   },
   {
     name: "Malik Hannah, Esq.",
     location: "Rowlett, Texas",
     achievement: "3 new cases in 10 days",
     quote:
-      "Success isn't about doing everything at once-it's about doing the right things in the right order. By building systems first and then scaling with marketing, Malik turned $843 into 3 signed cases in under 30 days. That's not luck, that's strategy.",
+      "Success isn't about doing everything at once - it's about doing the right things in the right order. Turning $843 into 3 signed cases in under 30 days. That's not luck, that's strategy.",
     timeFrame: "10 Days",
     signedClients: "3",
     revenue: "$15,000",
     costPerAcquisition: "$281",
     roi: "1,679%",
+    imagePosition: "right" as const,
+    imageSrc: malik,
+    caseStudyCategory: "Personal Injury, car accidents",
+  },
+  {
+    name: "Byron Bailey, Esq.",
+    location: "Dallas-Fort Worth, Texas",
+    achievement: "$60,000 in 60 days",
+    quote:
+      "Signed 15 new cases in just 4 weeks. Once the systems were in place, the growth came fast. First the CRM setup was completed and then came ads and proper tracking. In 60 days, firm worked like a well oiled machine.",
+    timeFrame: "60 Days",
+    signedClients: "15",
+    revenue: "$60,000",
+    costPerAcquisition: "$307",
+    roi: "1,204%",
     imagePosition: "left" as const,
-    imageSrc: malik ,
+    imageSrc: byron,
+    caseStudyCategory: "Personal Injury lawyers: car, truck, rideshare, slips, bites.",
   },
 ];
 

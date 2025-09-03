@@ -110,12 +110,12 @@ export const HeroSection = ({ onShowEmailPopup }: HeroSectionProps): JSX.Element
           <div className="text-center mb-8">
             <Button 
               onClick={onShowEmailPopup}
-              className="bg-[#0e823e] hover:bg-[#0e823e]/90 text-white text-[35.2px] leading-[48.3px] h-auto px-8 py-6 rounded-[3.02px] border border-[#00000021] shadow-[0px_4.03px_8.05px_#001c3826] [font-family:'Playfair_Display',serif] font-medium mb-4"
+              className="h-14 md:h-16 lg:h-18 bg-[#0e823e] hover:bg-[#0e823e]/90 text-white text-[35.2px] leading-[48.3px] px-8 py-6 rounded-[3.02px] border border-[#00000021] shadow-[0px_4.03px_8.05px_#001c3826] [font-family:'Playfair_Display',serif] font-medium mb-4"
             >
               <span className="mr-4">See If You Qualify</span>
               <ArrowRight className="w-6 h-6" />
             </Button>
-            <p className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[14.1px] leading-[19.7px]">
+            <p className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[14.1px] leading-[19.7px] -mt-0.5">
               Completely Done-For-You Case Generation System
             </p>
           </div>

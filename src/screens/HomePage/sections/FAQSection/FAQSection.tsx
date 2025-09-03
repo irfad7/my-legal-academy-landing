@@ -37,15 +37,15 @@ const faqData = [
   },
   {
     question: "What if our intake is slow?",
-    answer: "Speed to lead is critical. We target under 60 seconds. If response time slips, signed cases drop. We help you tighten routing, hours, and scripts."
+    answer: "We help you tighten routing, hours, and scripts. Speed to lead is critical. We target under 60 seconds. If response time slips, signed cases drop."
   },
   {
     question: "Do you set up follow-up?",
-    answer: "Yes. We install AI-assisted follow-up with up to 15 touches in 7 days across phone, SMS, and email, aligned with your state rules."
+    answer: "Yes. We install AI-assisted follow-up with up to 15 touchpoints in 7 days across phone, SMS, and email, aligned with your state rules."
   },
   {
     question: "Can you work with our existing CRM?",
-    answer: "Yes. We integrate with GoHighLevel, HubSpot, and others. If you do not have a CRM, we'll set one up with call tracking."
+    answer: "Yes. We integrate with GoHighLevel, HubSpot, and virtually every other CRM. If you do not have a CRM, we'll set one up with call tracking."
   },
   {
     question: "How do you qualify prospects?",
@@ -61,11 +61,11 @@ const faqData = [
   },
   {
     question: "Do you guarantee results?",
-    answer: "No guarantees. We operate on measurable KPIs, fast iteration, and clear stop-loss rules. If economics are not working, we fix or pause."
+    answer: "With over five years of experience generating high-volume PI cases across US markets, we've designed and perfected a system that delivers proven, predictable and scalable results. The success of our partnership with your firm highly depends on your qualification. We operate on measurable KPIs, fast iteration, and clear stop-loss rules. If economics are not working, we fix or pause."
   },
   {
     question: "How fast until we see signed cases?",
-    answer: "Many firms see the first signed cases in the first 2 to 4 weeks after go-live. Bigger markets or new brands may take longer."
+    answer: "Many firms see the first signed cases in the first 2 to 4 weeks after go-live. Bigger markets or new firms may take longer."
   },
   {
     question: "Who owns the data and ad accounts?",
@@ -110,7 +110,7 @@ export const FAQSection = ({ onShowEmailPopup }: FAQSectionProps): JSX.Element =
 
   return (
     <section className="w-full px-4 pb-5">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-[36px] sm:text-[42px] md:text-[56px] lg:text-[64px] tracking-[-0.5px] leading-tight mb-8">
             Frequently Asked Questions
@@ -147,7 +147,7 @@ export const FAQSection = ({ onShowEmailPopup }: FAQSectionProps): JSX.Element =
         <div className="text-center">
           <Button 
             onClick={onShowEmailPopup}
-            className="h-auto bg-[#0e823e] hover:bg-[#0c7235] text-white rounded-[3.02px] border border-[#00000021] shadow-[0px_4.03px_8.05px_#001c3826] px-8 py-6"
+            className="h-14 md:h-16 lg:h-18 bg-[#0e823e] hover:bg-[#0c7235] text-white rounded-[3.02px] border border-[#00000021] shadow-[0px_4.03px_8.05px_#001c3826] px-8 py-6"
           >
             <span className="[font-family:'Playfair_Display',serif] font-medium text-[35.2px] tracking-[0] leading-[48.3px] flex items-center gap-2">
               See If You Qualify
@@ -155,7 +155,7 @@ export const FAQSection = ({ onShowEmailPopup }: FAQSectionProps): JSX.Element =
             </span>
           </Button>
 
-                            <p className="text-[#60606b] [font-family:'Playfair_Display',serif] font-medium text-[14.1px] tracking-[0] leading-[19.7px] mt-4">
+          <p className="text-[#60606b] [font-family:'Playfair_Display',serif] font-medium text-[14.1px] tracking-[0] leading-[19.7px] mt-2">
             Completely Done-For-You Case Generation System
           </p>
         </div>

@@ -15,6 +15,7 @@ interface TestimonialCardProps {
   roi: string;
   imagePosition: "left" | "right";
   imageSrc?: string;
+  caseStudyCategory?: string;
 }
 
 export const TestimonialCard: React.FC<TestimonialCardProps> = ({
@@ -29,6 +30,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
   roi,
   imagePosition,
   imageSrc,
+  caseStudyCategory,
 }) => {
   const stats = [
     { label: "Time Frame", value: timeFrame },
@@ -36,7 +38,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
     { label: "Revenue", value: revenue, highlight: true },
     { label: "Cost per Acquisition", value: costPerAcquisition },
     { label: "Return on Investment", value: roi, highlight: true },
-  ];
+  ].filter(stat => stat.value && stat.value.trim() !== "");
 
   const ImageComponent = () => (
     <div className="relative w-[400px] h-[450px] flex-shrink-0 flex flex-col items-center justify-center group">
@@ -47,13 +49,18 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
             alt={name}
             src={imageSrc}
           />
-          <div className="mt-4 text-center">
+                    <div className="mt-4 text-center">
             <div className="[font-family:'Playfair_Display',serif] font-semibold text-[#0e823e] text-[28px] leading-[36px] tracking-wide">
               {name}
             </div>
-                          <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[22px] leading-[30px] mt-1">
+            <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[22px] leading-[30px] mt-1">
               {location}
             </div>
+            {caseStudyCategory && (
+              <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[18px] leading-[24px] mt-2">
+                {caseStudyCategory}
+              </div>
+            )}
           </div>
         </div>
       ) : (
@@ -94,14 +101,19 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
               )}
             </div>
 
-            {/* Name and Location - Outside image container */}
+                        {/* Name and Location - Outside image container */}
             <div className="text-center w-full mb-8">
               <div className="[font-family:'Playfair_Display',serif] font-semibold text-[#0e823e] text-xl leading-tight tracking-wide">
                 {name}
               </div>
-                              <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-base leading-tight mt-2">
+              <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-base leading-tight mt-2">
                 {location}
               </div>
+              {caseStudyCategory && (
+                <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-sm leading-tight mt-2">
+                  {caseStudyCategory}
+                </div>
+              )}
             </div>
 
             <div className="flex-1 space-y-6 w-full">
@@ -110,7 +122,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
               </div>
 
               <div className="[font-family:'Playfair_Display',serif] font-normal text-[#4d5256] text-base leading-relaxed italic text-center">
-                {quote.includes("Success isn't about doing everything at once") || quote.includes("Tim proved that precision beats guesswork") ? (
+                {quote.includes("Success isn't about doing everything at once") || quote.includes("Precision beats guesswork") || quote.includes("Stopped guessing and started following the process") || quote.includes("Signed 15 new cases in just 4 weeks") ? (
                   <>{quote}</>
                 ) : (
                   <>
@@ -119,10 +131,6 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                     <span className="font-bold text-[#0e823e]">"</span>
                   </>
                 )}
-              </div>
-
-              <div className="[font-family:'Playfair_Display',serif] font-bold text-[#0c0c0c] text-xl leading-tight tracking-wide text-center">
-                With My Legal Academy...
               </div>
 
               <div className="space-y-3">
@@ -156,8 +164,8 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
               {achievement}
             </div>
 
-                          <div className="[font-family:'Playfair_Display',serif] font-normal text-[#4d5256] text-[22px] leading-[32px] italic">
-              {quote.includes("Success isn't about doing everything at once") || quote.includes("Tim proved that precision beats guesswork") ? (
+                                      <div className="[font-family:'Playfair_Display',serif] font-normal text-[#4d5256] text-[22px] leading-[32px] italic">
+              {quote.includes("Success isn't about doing everything at once") || quote.includes("Precision beats guesswork") || quote.includes("Stopped guessing and started following the process") || quote.includes("Signed 15 new cases in just 4 weeks") ? (
                 <>{quote}</>
               ) : (
                 <>
@@ -166,10 +174,6 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                   <span className="font-bold text-[#0e823e]">"</span>
                 </>
               )}
-            </div>
-
-                          <div className="[font-family:'Playfair_Display',serif] font-bold text-[#0c0c0c] text-[22px] leading-[30px] tracking-wide">
-              With My Legal Academy...
             </div>
 
             <div className="pl-8 space-y-4">

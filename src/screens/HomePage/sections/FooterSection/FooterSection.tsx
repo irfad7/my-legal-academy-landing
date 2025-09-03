@@ -5,7 +5,7 @@ import revenuce from '../../../../assets/images/revenue 2x.png';
 
 export const FooterSection = (): JSX.Element => {
   return (
-    <section className="w-full py-4 sm:py-6 lg:py-0">
+    <section className="w-full pt-0 pb-4 sm:pt-0 sm:pb-6 lg:pt-0 lg:pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <Card className="bg-transparent border-none shadow-none">
           <CardContent className="p-0">

@@ -64,7 +64,7 @@ export const StatsCard = (): JSX.Element => {
   return (
     <section className="w-full py-8 md:py-12 px-4 -mt-12">
       <div className="max-w-7xl mx-auto">
-        <Card className="w-full max-w-4xl mx-auto bg-white rounded-[8.05px] shadow-[0px_0px_20.13px_#002c7a14] transition-all duration-300 hover:shadow-[0px_0px_30px_#002c7a25] hover:-translate-y-2">
+        <Card className="w-full mx-auto bg-white rounded-[8.05px] shadow-[0px_0px_20.13px_#002c7a14] transition-all duration-300 hover:shadow-[0px_0px_30px_#002c7a25] hover:-translate-y-2">
           <CardContent className="px-8 pt-4 pb-8 md:px-12 md:pt-6 md:pb-10">
             {/* Heading */}
             <h3 className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center mt-0 mb-6 md:mb-12 lg:mb-14 leading-tight px-2">
@@ -75,14 +75,14 @@ export const StatsCard = (): JSX.Element => {
             <div className="flex items-start gap-4 md:gap-8 lg:gap-12">
               {statisticsData.map((stat, index) => (
                 <div key={index} className="flex-1 text-center group">
-                  <div className="[font-family:'Playfair_Display',serif] font-normal text-[#0e823e] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] leading-tight mb-3 md:mb-6 transition-all duration-300 group-hover:scale-110 group-hover:text-[#0d6e33]">
+                  <div className="[font-family:'Playfair_Display',serif] font-normal text-[#0e823e] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[70px] leading-tight mb-3 md:mb-6 transition-all duration-300 group-hover:scale-110 group-hover:text-[#0d6e33]">
                     {formatValue(stat.value, animatedValues[stat.value])}
                   </div>
                   <div className="space-y-0">
-                    <div className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] leading-relaxed transition-colors duration-300 group-hover:text-[#0e823e]">
+                    <div className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[26px] leading-relaxed transition-colors duration-300 group-hover:text-[#0e823e]">
                       {stat.label}
                     </div>
-                                          <div className="[font-family:'Playfair_Display',serif] font-bold text-[#0c0c0c] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] leading-relaxed transition-colors duration-300 group-hover:text-[#0e823e]">
+                                          <div className="[font-family:'Playfair_Display',serif] font-bold text-[#0c0c0c] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[26px] leading-relaxed transition-colors duration-300 group-hover:text-[#0e823e]">
                       {stat.sublabel}
                     </div>
                   </div>

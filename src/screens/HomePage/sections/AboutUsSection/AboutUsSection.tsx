@@ -59,7 +59,7 @@ export const AboutUsSection = ({ onShowEmailPopup }: AboutUsSectionProps): JSX.E
         </div>
 
         {/* Testimonials */}
-        <div className="relative mt-12 mb-8 md:mt-14 md:mb-10">
+        <div className="relative mt-6 mb-8 md:mt-8 md:mb-10">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-4 lg:gap-6">
             {testimonialsData.map((t, index) => (
               <Card
@@ -120,14 +120,14 @@ export const AboutUsSection = ({ onShowEmailPopup }: AboutUsSectionProps): JSX.E
         <div className="text-center mt-4">
           <Button 
             onClick={onShowEmailPopup}
-            className="h-auto rounded-[3.02px] border border-[#00000021] bg-[#0e823e] px-8 py-6 shadow-[0px_4.03px_8.05px_#001c3826] text-white hover:bg-[#0e823e]/90"
+            className="h-14 md:h-16 lg:h-18 rounded-[3.02px] border border-[#00000021] bg-[#0e823e] px-8 py-6 shadow-[0px_4.03px_8.05px_#001c3826] text-white hover:bg-[#0e823e]/90"
           >
             <span className="mr-2 text-[35.2px] font-medium leading-[48.3px] [font-family:'Playfair_Display',serif]">
               See If You Qualify
             </span>
             <ArrowRight className="h-6 w-6" />
           </Button>
-                            <p className="mt-4 text-[14.1px] font-medium leading-relaxed text-[#60606b] [font-family:'Playfair_Display',serif]">
+          <p className="mt-2 text-[14.1px] font-medium leading-relaxed text-[#60606b] [font-family:'Playfair_Display',serif]">
             Completely Done-For-You Case Generation System
           </p>
         </div>
