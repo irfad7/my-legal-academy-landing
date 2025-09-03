@@ -81,17 +81,17 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
         {/* Mobile Layout - Image at top */}
         <div className="block lg:hidden">
           <div className="flex flex-col items-center p-4">
-            <div className="relative w-full h-[350px] flex-shrink-0 flex flex-col items-center justify-center group mb-4">
+            <div className="relative w-full flex-shrink-0 flex flex-col items-center justify-center group mb-4">
               {imageSrc ? (
-                <div className="flex flex-col justify-center items-center w-full h-full">
+                <div className="flex flex-col justify-center items-center w-full">
                   <img
-                    className="w-full h-full object-cover rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
+                    className="w-full max-w-[300px] h-auto object-contain rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
                     alt={name}
                     src={imageSrc}
                   />
                 </div>
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex flex-col items-center justify-center">
+                <div className="w-full max-w-[300px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex flex-col items-center justify-center p-8">
                   <div className="text-gray-500 text-center">
                     <div className="w-20 h-20 bg-gray-400 rounded-full mx-auto mb-4"></div>
                     <p className="font-medium text-base">{name}</p>
