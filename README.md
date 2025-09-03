@@ -6,10 +6,11 @@ A modern, mobile-responsive landing page for personal injury law firms showcasin
 
 ### **Staging Environment**
 - **Branch**: `staging`
-- **URL**: https://pi-lander-2hb72zhj4-irfad7s-projects.vercel.app
+- **URL**: https://pi-lander-nau8oqoeo-irfad7s-projects.vercel.app
 - **Purpose**: Testing and preview before production
 - **Backend API**: Email capture functionality with serverless functions
 - **Webhook Integration**: Automatic Zapier webhook on email submissions
+- **Analytics**: Google Analytics 4 tracking with event tracking
 
 ### **Production Environment**
 - **Branch**: `main`
@@ -87,6 +88,26 @@ npm run build
 - **Node.js/Express** for backend API
 - **Zod** for data validation
 - **Serverless Functions** for email capture
+
+## 📊 Analytics & Tracking
+
+### **Google Analytics 4:**
+- **Tracking ID**: `G-BPBP33H4JP`
+- **Page Views**: Automatic tracking of landing page visits
+- **Events**: Email submissions tracked as conversions
+- **UTM Parameters**: Automatically captured and sent to GA4
+
+### **Event Tracking:**
+- ✅ **Page Views** - Landing page visits with UTM parameters
+- ✅ **Email Submissions** - Tracked as lead generation events
+- ✅ **Form Interactions** - Form opens and interactions
+- ✅ **Conversions** - Email submissions as conversion events
+
+### **Analytics Data:**
+- **Real-time tracking** of user behavior
+- **Conversion tracking** for email submissions
+- **UTM parameter analysis** for campaign performance
+- **Event-based analytics** for user journey analysis
 
 ## 🔧 Backend API
 
