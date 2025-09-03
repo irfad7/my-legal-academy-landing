@@ -39,7 +39,7 @@ export const CallToActionSection = (): JSX.Element => {
             to deliver high-value car accident cases consistently at trackable
             ROI.
           </p> */}
-          <p className="[font-family:'Inter',Helvetica] font-normal text-[#0c0c0c] 
+                      <p className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] 
   text-[20px] md:text-[22px] lg:text-[24px] text-center leading-relaxed max-w-4xl mt-4 md:mt-6 mx-auto px-4">
   A proven case-generation system trusted by PI firms <br />
   to deliver high-value car accident cases consistently at trackable ROI.
@@ -58,7 +58,7 @@ export const CallToActionSection = (): JSX.Element => {
             {bulletPoints.map((point, index) => (
               <div key={index} className="flex items-start gap-3 w-full max-w-md">
                 <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#0c0c0c] text-[20px] leading-relaxed text-left">
+                <span className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[20px] leading-relaxed text-left">
                   {point}
                 </span>
               </div>
@@ -70,7 +70,7 @@ export const CallToActionSection = (): JSX.Element => {
             {bulletPoints.map((point, index) => (
               <div key={index} className="flex items-start gap-3 w-full">
                 <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#0c0c0c] text-[20px] leading-relaxed text-left">
+                <span className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[20px] leading-relaxed text-left">
                   {point}
                 </span>
               </div>

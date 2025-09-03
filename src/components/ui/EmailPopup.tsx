@@ -95,7 +95,7 @@ export const EmailPopup: React.FC<EmailPopupProps> = ({
 
         {/* Content */}
         <div className="p-6">
-          <p className="[font-family:'Inter',Helvetica] text-[#4d5256] text-base leading-relaxed mb-6">
+                      <p className="[font-family:'Playfair_Display',serif] text-[#4d5256] text-base leading-relaxed mb-6">
             Enter your email address to access our qualification questionnaire and see if PI Track is right for your firm.
           </p>
 
@@ -109,11 +109,11 @@ export const EmailPopup: React.FC<EmailPopupProps> = ({
                 disabled={isSubmitting}
                 className={`h-12 text-base border-2 ${
                   !isValid ? "border-red-500" : "border-[#d5d5d5]"
-                } rounded-[4px] [font-family:'Inter',Helvetica] px-4 focus:border-[#0e823e] focus:outline-none`}
+                } rounded-[4px] [font-family:'Playfair_Display',serif] px-4 focus:border-[#0e823e] focus:outline-none`}
                 required
               />
               {!isValid && (
-                <p className="text-red-500 text-sm mt-1 [font-family:'Inter',Helvetica]">
+                <p className="text-red-500 text-sm mt-1 [font-family:'Playfair_Display',serif]">
                   Please enter a valid email address
                 </p>
               )}
@@ -141,7 +141,7 @@ export const EmailPopup: React.FC<EmailPopupProps> = ({
             </Button>
           </form>
 
-          <p className="text-[#60606b] [font-family:'Inter',Helvetica] text-xs text-center mt-4">
+                      <p className="text-[#60606b] [font-family:'Playfair_Display',serif] text-xs text-center mt-4">
             By continuing, you agree to receive communications from My Legal Academy
           </p>
         </div>

@@ -48,10 +48,10 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
             src={imageSrc}
           />
           <div className="mt-4 text-center">
-            <div className="[font-family:'Inter',Helvetica] font-semibold text-[#0e823e] text-[28px] leading-[36px] tracking-wide">
+            <div className="[font-family:'Playfair_Display',serif] font-semibold text-[#0e823e] text-[28px] leading-[36px] tracking-wide">
               {name}
             </div>
-            <div className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-[22px] leading-[30px] mt-1">
+                          <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[22px] leading-[30px] mt-1">
               {location}
             </div>
           </div>
@@ -96,10 +96,10 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
             {/* Name and Location - Outside image container */}
             <div className="text-center w-full mb-8">
-              <div className="[font-family:'Inter',Helvetica] font-semibold text-[#0e823e] text-xl leading-tight tracking-wide">
+              <div className="[font-family:'Playfair_Display',serif] font-semibold text-[#0e823e] text-xl leading-tight tracking-wide">
                 {name}
               </div>
-              <div className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-base leading-tight mt-2">
+                              <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-base leading-tight mt-2">
                 {location}
               </div>
             </div>
@@ -109,7 +109,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 {achievement}
               </div>
 
-              <div className="[font-family:'Inter',Helvetica] font-normal text-[#4d5256] text-base leading-relaxed italic text-center">
+              <div className="[font-family:'Playfair_Display',serif] font-normal text-[#4d5256] text-base leading-relaxed italic text-center">
                 {quote.includes("Success isn't about doing everything at once") || quote.includes("Tim proved that precision beats guesswork") ? (
                   <>{quote}</>
                 ) : (
@@ -121,7 +121,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 )}
               </div>
 
-              <div className="[font-family:'Inter',Helvetica] font-bold text-[#0c0c0c] text-xl leading-tight tracking-wide text-center">
+              <div className="[font-family:'Playfair_Display',serif] font-bold text-[#0c0c0c] text-xl leading-tight tracking-wide text-center">
                 With My Legal Academy...
               </div>
 
@@ -129,7 +129,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 {stats.map((stat, index) => (
                   <div
                     key={index}
-                    className="flex items-start gap-3 [font-family:'Inter',Helvetica] text-base leading-relaxed"
+                    className="flex items-start gap-3 [font-family:'Playfair_Display',serif] text-base leading-relaxed"
                   >
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                     <span className="text-[#4d5256] font-medium">{stat.label}: </span>
@@ -156,7 +156,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
               {achievement}
             </div>
 
-            <div className="[font-family:'Inter',Helvetica] font-normal text-[#4d5256] text-[22px] leading-[32px] italic">
+                          <div className="[font-family:'Playfair_Display',serif] font-normal text-[#4d5256] text-[22px] leading-[32px] italic">
               {quote.includes("Success isn't about doing everything at once") || quote.includes("Tim proved that precision beats guesswork") ? (
                 <>{quote}</>
               ) : (
@@ -168,7 +168,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
               )}
             </div>
 
-            <div className="[font-family:'Inter',Helvetica] font-bold text-[#0c0c0c] text-[22px] leading-[30px] tracking-wide">
+                          <div className="[font-family:'Playfair_Display',serif] font-bold text-[#0c0c0c] text-[22px] leading-[30px] tracking-wide">
               With My Legal Academy...
             </div>
 
@@ -176,7 +176,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-4 [font-family:'Inter',Helvetica] text-[36px] leading-[42px]"
+                  className="flex items-center gap-4 [font-family:'Playfair_Display',serif] text-[36px] leading-[42px]"
                 >
                   <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
                   <span className="text-[#4d5256] font-medium">{stat.label}: </span>

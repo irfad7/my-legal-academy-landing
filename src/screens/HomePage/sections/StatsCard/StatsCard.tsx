@@ -75,14 +75,14 @@ export const StatsCard = (): JSX.Element => {
             <div className="flex items-start gap-4 md:gap-8 lg:gap-12">
               {statisticsData.map((stat, index) => (
                 <div key={index} className="flex-1 text-center group">
-                  <div className="[font-family:'Inter',Helvetica] font-normal text-[#0e823e] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] leading-tight mb-3 md:mb-6 transition-all duration-300 group-hover:scale-110 group-hover:text-[#0d6e33]">
+                  <div className="[font-family:'Playfair_Display',serif] font-normal text-[#0e823e] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] leading-tight mb-3 md:mb-6 transition-all duration-300 group-hover:scale-110 group-hover:text-[#0d6e33]">
                     {formatValue(stat.value, animatedValues[stat.value])}
                   </div>
                   <div className="space-y-0">
-                    <div className="[font-family:'Inter',Helvetica] font-normal text-[#0c0c0c] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] leading-relaxed transition-colors duration-300 group-hover:text-[#0e823e]">
+                    <div className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] leading-relaxed transition-colors duration-300 group-hover:text-[#0e823e]">
                       {stat.label}
                     </div>
-                    <div className="[font-family:'Inter',Helvetica] font-bold text-[#0c0c0c] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] leading-relaxed transition-colors duration-300 group-hover:text-[#0e823e]">
+                                          <div className="[font-family:'Playfair_Display',serif] font-bold text-[#0c0c0c] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[22px] leading-relaxed transition-colors duration-300 group-hover:text-[#0e823e]">
                       {stat.sublabel}
                     </div>
                   </div>

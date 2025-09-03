@@ -40,7 +40,7 @@ export const HomePage = (): JSX.Element => {
         <div className="w-full bg-[#0e823e] border-b border-[#e6edf2] relative">
           <div className="container mx-auto px-4 py-3">
             <div className="flex items-center justify-center relative">
-              <div className="[font-family:'Inter',Helvetica] font-normal text-white text-sm md:text-[15.1px] text-center">
+              <div className="[font-family:'Playfair_Display',serif] font-normal text-white text-sm md:text-[15.1px] text-center">
                 February 12th - 15th, 2025 | Claim Your Ticket To The LAST DANCE Of Funnel Hacking Live Here →
               </div>
              
@@ -93,7 +93,7 @@ export const HomePage = (): JSX.Element => {
 
           {/* Disclaimer */}
           <div className="text-center max-w-4xl mx-auto px-4">
-            <p className="[font-family:'Inter',Helvetica] font-normal italic text-[#60606b] text-[14.1px] leading-[19.7px]">
+            <p className="[font-family:'Playfair_Display',serif] font-normal italic text-[#60606b] text-[14.1px] leading-[19.7px]">
               This program is subject to MLA&apos;s prerequisites and process
               adherence. Spaces are limited. No guarantees of specific case
               outcomes. Compliance with State Bar guidelines required.

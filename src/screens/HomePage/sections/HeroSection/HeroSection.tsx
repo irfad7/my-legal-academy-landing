@@ -96,7 +96,7 @@ export const HeroSection = ({ onShowEmailPopup }: HeroSectionProps): JSX.Element
                       </div>
                     </a>
                     <div className="text-center">
-                      <p className="[font-family:'Inter',Helvetica] font-normal text-[#4d5256] text-[16.1px] leading-[22.5px]">
+                      <p className="[font-family:'Playfair_Display',serif] font-normal text-[#4d5256] text-[16.1px] leading-[22.5px]">
                         {testimonial.category}
                       </p>
                     </div>
@@ -115,7 +115,7 @@ export const HeroSection = ({ onShowEmailPopup }: HeroSectionProps): JSX.Element
               <span className="mr-4">See If You Qualify</span>
               <ArrowRight className="w-6 h-6" />
             </Button>
-            <p className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-[14.1px] leading-[19.7px]">
+            <p className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[14.1px] leading-[19.7px]">
               Completely Done-For-You Case Generation System
             </p>
           </div>

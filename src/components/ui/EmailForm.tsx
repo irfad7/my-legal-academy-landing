@@ -83,7 +83,7 @@ export const EmailForm: React.FC<EmailFormProps> = ({
           placeholder={placeholder}
           required
           disabled={isSubmitting}
-          className="h-14 md:h-16 lg:h-18 text-base md:text-lg lg:text-xl border-2 border-[#d5d5d5] rounded-[4px] [font-family:'Inter',Helvetica] px-3 md:px-4"
+                          className="h-14 md:h-16 lg:h-18 text-base md:text-lg lg:text-xl border-2 border-[#d5d5d5] rounded-[4px] [font-family:'Playfair_Display',serif] px-3 md:px-4"
         />
         {error && (
           <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">

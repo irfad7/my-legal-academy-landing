@@ -124,7 +124,7 @@ export const FAQSection = ({ onShowEmailPopup }: FAQSectionProps): JSX.Element =
                 onClick={() => toggleItem(index)}
                 className="w-full text-left p-6 flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
-                <h3 className="[font-family:'Inter',Helvetica] font-bold text-[#0c0c0c] text-[18.1px] tracking-[0] leading-[27.2px] pr-4">
+                <h3 className="[font-family:'Playfair_Display',serif] font-bold text-[#0c0c0c] text-[18.1px] tracking-[0] leading-[27.2px] pr-4">
                   {faq.question}
                 </h3>
                 {openItems.includes(index) ? (
@@ -135,7 +135,7 @@ export const FAQSection = ({ onShowEmailPopup }: FAQSectionProps): JSX.Element =
               </button>
               {openItems.includes(index) && (
                 <div className="px-6 pb-6">
-                  <p className="[font-family:'Inter',Helvetica] font-normal text-[#4d5256] text-[16.1px] tracking-[0] leading-[24.2px]">
+                  <p className="[font-family:'Playfair_Display',serif] font-normal text-[#4d5256] text-[16.1px] tracking-[0] leading-[24.2px]">
                     {faq.answer}
                   </p>
                 </div>
@@ -155,7 +155,7 @@ export const FAQSection = ({ onShowEmailPopup }: FAQSectionProps): JSX.Element =
             </span>
           </Button>
 
-          <p className="text-[#60606b] [font-family:'Inter',Helvetica] font-medium text-[14.1px] tracking-[0] leading-[19.7px] mt-4">
+                            <p className="text-[#60606b] [font-family:'Playfair_Display',serif] font-medium text-[14.1px] tracking-[0] leading-[19.7px] mt-4">
             Completely Done-For-You Case Generation System
           </p>
         </div>

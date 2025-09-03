@@ -22,7 +22,7 @@ export const RequirementsSection = (): JSX.Element => {
             </header>
 
             <div className="text-center">
-              <p className="[font-family:'Inter',Helvetica] text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] leading-relaxed text-[#4d5256] max-w-4xl mx-auto">
+              <p className="[font-family:'Playfair_Display',serif] text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] leading-relaxed text-[#4d5256] max-w-4xl mx-auto">
                 We only partner with firms ready to execute fast and follow the system and who meet these requirements:
               </p>
             </div>
@@ -36,7 +36,7 @@ export const RequirementsSection = (): JSX.Element => {
                         <Check className="w-5 h-5 md:w-6 md:h-6 text-green-600" />
                       </div>
                       <div className="flex-1">
-                        <p className="[font-family:'Inter',Helvetica] text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] leading-relaxed text-[#0c0c0c]">
+                        <p className="[font-family:'Playfair_Display',serif] text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] leading-relaxed text-[#0c0c0c]">
                           {item}
                         </p>
                       </div>

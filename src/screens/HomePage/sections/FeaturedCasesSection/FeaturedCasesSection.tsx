@@ -35,7 +35,7 @@ export const FeaturedCasesSection = (): JSX.Element => {
               </h2>
             </header>
 
-            <div className="space-y-6 md:space-y-8 [font-family:'Inter',Helvetica] text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] leading-relaxed max-w-3xl mx-auto">
+            <div className="space-y-6 md:space-y-8 [font-family:'Playfair_Display',serif] text-[16px] sm:text-[18px] md:text-[22px] lg:text-[24px] leading-relaxed max-w-3xl mx-auto">
               {benefitsList.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4 md:gap-6 lg:gap-8">
                   <div className="flex-shrink-0">

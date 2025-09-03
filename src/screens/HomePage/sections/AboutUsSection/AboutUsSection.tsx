@@ -78,15 +78,15 @@ export const AboutUsSection = ({ onShowEmailPopup }: AboutUsSectionProps): JSX.E
                   </div>
 
                   {/* name + location */}
-                  <h4 className="[font-family:'Inter',Helvetica] text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight text-[#0c0c0c] text-center mt-2 sm:mt-0">
+                  <h4 className="[font-family:'Playfair_Display',serif] text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight text-[#0c0c0c] text-center mt-2 sm:mt-0">
                     {t.name}
                   </h4>
-                  <p className="[font-family:'Inter',Helvetica] mt-1 text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed text-[#4d5256] text-center">
+                  <p className="[font-family:'Playfair_Display',serif] mt-1 text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-relaxed text-[#4d5256] text-center">
                     {t.location}
                   </p>
 
                   {/* quote */}
-                  <blockquote className="[font-family:'Inter',Helvetica] mx-auto mt-4 sm:mt-6 flex-1 text-center text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-[#4d5256]">
+                  <blockquote className="[font-family:'Playfair_Display',serif] mx-auto mt-4 sm:mt-6 flex-1 text-center text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-[#4d5256]">
                     &ldquo;
                     {t.quote.includes("35 clients") ? (
                       <>
@@ -127,7 +127,7 @@ export const AboutUsSection = ({ onShowEmailPopup }: AboutUsSectionProps): JSX.E
             </span>
             <ArrowRight className="h-6 w-6" />
           </Button>
-          <p className="mt-4 text-[14.1px] font-medium leading-relaxed text-[#60606b] [font-family:'Inter',Helvetica]">
+                            <p className="mt-4 text-[14.1px] font-medium leading-relaxed text-[#60606b] [font-family:'Playfair_Display',serif]">
             Completely Done-For-You Case Generation System
           </p>
         </div>

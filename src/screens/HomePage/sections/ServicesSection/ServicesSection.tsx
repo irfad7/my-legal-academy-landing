@@ -79,11 +79,11 @@ export const ServicesSection = (): JSX.Element => {
                 value={item.id}
                 className="border-none"
               >
-                <AccordionTrigger className="[font-family:'Inter',Helvetica] font-bold text-[#0c0c0c] text-[20.1px] tracking-[0] leading-[24.2px] hover:no-underline py-6 px-0">
+                <AccordionTrigger className="[font-family:'Playfair_Display',serif] font-bold text-[#0c0c0c] text-[20.1px] tracking-[0] leading-[24.2px] hover:no-underline py-6 px-0">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
-                  <div className="text-gray-600 [font-family:'Inter',Helvetica] text-[16px] leading-[24px]">
+                  <div className="text-gray-600 [font-family:'Playfair_Display',serif] text-[16px] leading-[24px]">
                     {item.answer}
                   </div>
                 </AccordionContent>

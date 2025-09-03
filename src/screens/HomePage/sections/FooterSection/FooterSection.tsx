@@ -26,7 +26,7 @@ export const FooterSection = (): JSX.Element => {
                 </div>
 
               <div className="space-y-4 sm:space-y-6">
-                <blockquote className="text-lg sm:text-xl lg:text-2xl xl:text-[40.3px] leading-tight lg:leading-[48.3px] tracking-[-0.81px] [font-family:'Inter',Helvetica]">
+                <blockquote className="text-lg sm:text-xl lg:text-2xl xl:text-[40.3px] leading-tight lg:leading-[48.3px] tracking-[-0.81px] [font-family:'Playfair_Display',serif]">
                   <span className="font-black text-[#0c0c0c] tracking-[-0.32px]">
                     "I doubled my revenue in one year, I'm literally{" "}
                   </span>
@@ -39,7 +39,7 @@ export const FooterSection = (): JSX.Element => {
                   </span>
                 </blockquote>
 
-                <cite className="block text-sm sm:text-base lg:text-lg text-[#4d5256] [font-family:'Inter',Helvetica] font-normal leading-relaxed lg:leading-[27.2px] not-italic">
+                <cite className="block text-sm sm:text-base lg:text-lg text-[#4d5256] [font-family:'Playfair_Display',serif] font-normal leading-relaxed lg:leading-[27.2px] not-italic">
                   – Stephen A. Smith, Esq., Personal Injury Lawyer, The Law
                   Offices of Stephen A. Smith
                 </cite>
