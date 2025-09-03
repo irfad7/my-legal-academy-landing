@@ -8,6 +8,18 @@
         "distDir": "dist",
         "buildCommand": "npm run build"
       }
+    },
+    {
+      "src": "api/submit-email.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/health.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/test.ts",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
