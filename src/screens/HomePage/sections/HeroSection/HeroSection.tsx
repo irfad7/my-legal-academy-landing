@@ -2,12 +2,12 @@ import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { ArrowRight, Play } from "lucide-react";
-import imagev1 from '../../../../assets/images/image v1.png';
-import imagev2 from '../../../../assets/images/image v2.png';
-import imagev3 from '../../../../assets/images/image v3.png';
-import imagev4 from '../../../../assets/images/image v4.png';
-import imagev5 from '../../../../assets/images/image v5.png';
-import imagev6 from '../../../../assets/images/image v6.png';
+import imagev1 from '../../../../assets/images/image-v1.png';
+import imagev2 from '../../../../assets/images/image-v2.png';
+import imagev3 from '../../../../assets/images/image-v3.png';
+import imagev4 from '../../../../assets/images/image-v4.png';
+import imagev5 from '../../../../assets/images/image-v5.png';
+import imagev6 from '../../../../assets/images/image-v6.png';
 
 interface HeroSectionProps {
   onShowEmailPopup: () => void;
