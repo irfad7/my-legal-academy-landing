@@ -8,7 +8,8 @@ import tim from '../../../../assets/images/tim.png';
 import malik from '../../../../assets/images/malik.png';
 const testimonialData = [
   {
-    name: "Demarcus Ward, Esq. from McKinney, Texas",
+    name: "Demarcus Ward, Esq.",
+    location: "McKinney, Texas",
     achievement: "$2,700,000 in 12 months",
     quote:
       "This program and group have changed the course of my entire practice. Its impact has been felt throughout my entire office. It is simply the best investment that we have ever made. We are forever grateful.",
@@ -21,7 +22,8 @@ const testimonialData = [
     imageSrc: mckinny,
   },
   {
-    name: "Jose Escobar, Esq. from Dallas, Texas",
+    name: "Jose Escobar, Esq.",
+    location: "Dallas, Texas",
     achievement: "$150,000 in 5 months",
     quote:
       "Our firm hired My Legal Academy to help with our firm's Facebook advertising, and the results have been outstanding. Their team is knowledgeable, responsive, and truly understands the legal industry.",
@@ -34,7 +36,8 @@ const testimonialData = [
     imageSrc: dallas,
   },
   {
-    name: "Bridgette Williams, Esq. from Los Angeles, California",
+    name: "Bridgette Williams, Esq.",
+    location: "Los Angeles, California",
     achievement: "$240,000 in 5 months",
     quote:
       "My experience with My Legal Academy has been fantastic. They have been absolutely wonderful with running our ads and giving me continuous updates and recommendations. They are dedicated to making sure my firm grows.",
@@ -47,7 +50,8 @@ const testimonialData = [
     imageSrc: bridgette,
   },
   {
-    name: "Jamie Alvarez, Esq. from Miramar, Florida",
+    name: "Jamie Alvarez, Esq.",
+    location: "Miramar, Florida",
     achievement: "$100,000 in 3 months",
     quote:
       "Sam and the rest of the team are wonderful. The program has really taught us how to work strategies effectively. They help us find the problems and solutions. We are very happy with what they are teaching us.",
@@ -60,10 +64,11 @@ const testimonialData = [
     imageSrc: jamie ,
   },
   {
-    name: "Tim Dominguez, Esq. from Irvine, California",
+    name: "Tim Dominguez, Esq.",
+    location: "Irvine, California",
     achievement: "9 new cases in 30 days",
     quote:
-      "Sam and the rest of the team are wonderful. The program has really taught us how to work strategies effectively. They help us find the problems and solutions. We are very happy with what they are teaching us.",
+      "Tim proved that precision beats guesswork-9 signed cases in 30 days, generating a 789% ROI. That's the power of phased execution. It's not about spending more-it's about spending smart. Tim closed 9 cases in one month with a 789% ROI.",
     timeFrame: "30 Days",
     signedClients: "9",
     revenue: "$72,000",
@@ -73,10 +78,11 @@ const testimonialData = [
     imageSrc: tim,
   },
   {
-    name: "Malik Hannah, Esq. from Rowlett, Texas",
+    name: "Malik Hannah, Esq.",
+    location: "Rowlett, Texas",
     achievement: "3 new cases in 10 days",
     quote:
-      "Sam and the rest of the team are wonderful. The program has really taught us how to work strategies effectively. They help us find the problems and solutions. We are very happy with what they are thinking us.",
+      "Success isn't about doing everything at once-it's about doing the right things in the right order. By building systems first and then scaling with marketing, Malik turned $843 into 3 signed cases in under 30 days. That's not luck, that's strategy.",
     timeFrame: "10 Days",
     signedClients: "3",
     revenue: "$15,000",
@@ -89,7 +95,7 @@ const testimonialData = [
 
 export const TeamSection = (): JSX.Element => {
   return (
-    <section className="relative w-full py-16">
+    <section className="relative w-full pt-4 pb-16">
       <div className="relative max-w-7xl mx-auto px-4">
         <div className="flex flex-col gap-10">
           {testimonialData.map((testimonial, index) => (

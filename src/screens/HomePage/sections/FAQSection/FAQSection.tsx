@@ -1,93 +1,155 @@
-import { CheckIcon, XIcon } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../../../components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "../../../../components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 
-const mustHaveItems = [
-  "$10-$15K Ad Budget",
-  "7-Day Intake Coverage",
-  "Speed to Lead within 60 seconds",
-  "CRM + Call Tracking in place\n(or ready to set up)",
-  "Commitment to proven process",
+interface FAQSectionProps {
+  onShowEmailPopup: () => void;
+}
+
+const faqData = [
+  {
+    question: "What is PI Track?",
+    answer: "A done-for-you case-generation system for personal injury firms that delivers car accident cases with trackable ROI."
+  },
+  {
+    question: "How many cases can we expect per month?",
+    answer: "Most qualified firms aim for 10 to 20+ auto accident clients per month. Results vary by market, offer, and intake speed."
+  },
+  {
+    question: "How fast can we launch?",
+    answer: "Typically 7 to 14 days from green light to live ads, assuming we have access to ad accounts, call tracking, and your intake calendar."
+  },
+  {
+    question: "What do you need from us to start?",
+    answer: "Ad account access, CRM or call tracking, intake availability, approved creative, and a point of contact who can make decisions fast."
+  },
+  {
+    question: "What budget do we need?",
+    answer: "Plan on $10k to $15k per month in ad spend. Some markets need more. We scale only when your signed-case economics are proven."
+  },
+  {
+    question: "Are the leads exclusive?",
+    answer: "Yes. We generate demand only for your firm in your target geos. No lead reselling."
+  },
+  {
+    question: "How do you track ROI?",
+    answer: "Every touch is tracked from click to signed case. We connect ads, call tracking, and CRM so cost per signed case and ROI are visible."
+  },
+  {
+    question: "What if our intake is slow?",
+    answer: "Speed to lead is critical. We target under 60 seconds. If response time slips, signed cases drop. We help you tighten routing, hours, and scripts."
+  },
+  {
+    question: "Do you set up follow-up?",
+    answer: "Yes. We install AI-assisted follow-up with up to 15 touches in 7 days across phone, SMS, and email, aligned with your state rules."
+  },
+  {
+    question: "Can you work with our existing CRM?",
+    answer: "Yes. We integrate with GoHighLevel, HubSpot, and others. If you do not have a CRM, we'll set one up with call tracking."
+  },
+  {
+    question: "How do you qualify prospects?",
+    answer: "We use geo, liability, injury, and coverage filters at the ad and form level. Disposition reasons are logged so we can improve targeting."
+  },
+  {
+    question: "What about compliance and bar rules?",
+    answer: "All creatives and follow-ups are reviewed for advertising and solicitation rules in your state. TCPA consent and opt-out language are standard."
+  },
+  {
+    question: "What counts as success?",
+    answer: "Signed cases at or below your target cost per signed case. We align on that number before launch and report to it weekly."
+  },
+  {
+    question: "Do you guarantee results?",
+    answer: "No guarantees. We operate on measurable KPIs, fast iteration, and clear stop-loss rules. If economics are not working, we fix or pause."
+  },
+  {
+    question: "How fast until we see signed cases?",
+    answer: "Many firms see the first signed cases in the first 2 to 4 weeks after go-live. Bigger markets or new brands may take longer."
+  },
+  {
+    question: "Who owns the data and ad accounts?",
+    answer: "You do. All campaigns, audiences, and CRM data live in your accounts."
+  },
+  {
+    question: "Can you scale beyond 20 cases per month?",
+    answer: "Yes, if your signed-case economics hold. We scale in phases to protect ROI and cash flow."
+  },
+  {
+    question: "Do you support nights and weekends?",
+    answer: "We recommend 7-day intake coverage. If you cannot staff it, we add overflow routing and after-hours automations."
+  },
+  {
+    question: "What intake scripts do you provide?",
+    answer: "Short discovery, qualification, and objection-handling scripts that match your practice and local norms."
+  },
+  {
+    question: "Can you target specific case values?",
+    answer: "We can bias toward higher-value injuries with creative, copy, form logic, and audience exclusions. True case value depends on facts and venue."
+  },
+  {
+    question: "What if we already run ads?",
+    answer: "We audit your current setup and keep what works. Then we plug in our creatives, tracking, and follow-up stack."
+  },
+  {
+    question: "How do we get started?",
+    answer: "Hit \"See If You Qualify,\" share your market and budget, and we'll confirm fit, economics, and a launch plan."
+  }
 ];
 
-const dealBreakerItems = [
-  "Unwilling to Follow System",
-  "Insufficient Ad Budget",
-  "No Prepared to Bring in Dedicated Intake Staff",
-  "Slow Response Times",
-];
+export const FAQSection = ({ onShowEmailPopup }: FAQSectionProps): JSX.Element => {
+  const [openItems, setOpenItems] = useState<number[]>([]);
 
-export const FAQSection = (): JSX.Element => {
+  const toggleItem = (index: number) => {
+    setOpenItems(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   return (
-    <section className="w-full py-16 px-4">
+    <section className="w-full px-4 pb-5">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="[font-family:'Inter',Helvetica] font-black text-[#0c0c0c] text-[48.3px] tracking-[-0.81px] leading-[58.0px] mb-8">
-            This isn't for every PI Attorney.
+          <h2 className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-[36px] sm:text-[42px] md:text-[56px] lg:text-[64px] tracking-[-0.5px] leading-tight mb-8">
+            Frequently Asked Questions
           </h2>
-          <p className="[font-family:'Inter',Helvetica] font-normal text-[#4d5256] text-[20px] tracking-[0] leading-[30.2px] max-w-5xl mx-auto">
-            We only partner with firms ready to execute fast and follow the system and who meet these requirements:
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <Card className="bg-white rounded-[8.05px] shadow-[0px_0px_40.25px_#002c7a1a] border-0">
-            <CardHeader>
-              <CardTitle className="[font-family:'Inter',Helvetica] font-black text-[#0c0c0c] text-[28.2px] tracking-[-0.81px] leading-[33.8px]">
-                Must-Haves
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {mustHaveItems.map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckIcon className="w-[18px] h-[18px] text-green-600 mt-1 flex-shrink-0" />
-                  <span className="[font-family:'Inter',Helvetica] font-bold text-[#4d5256] text-[18.1px] tracking-[0] leading-[27.2px]">
-                    {item}
-                  </span>
+        <div className="space-y-4 mb-16">
+          {faqData.map((faq, index) => (
+            <div key={index} className="bg-white rounded-[8.05px] shadow-[0px_0px_40.25px_#002c7a1a] border-0">
+              <button
+                onClick={() => toggleItem(index)}
+                className="w-full text-left p-6 flex items-center justify-between hover:bg-gray-50 transition-colors"
+              >
+                <h3 className="[font-family:'Inter',Helvetica] font-bold text-[#0c0c0c] text-[18.1px] tracking-[0] leading-[27.2px] pr-4">
+                  {faq.question}
+                </h3>
+                {openItems.includes(index) ? (
+                  <ChevronUp className="w-5 h-5 text-[#4d5256] flex-shrink-0" />
+                ) : (
+                  <ChevronDown className="w-5 h-5 text-[#4d5256] flex-shrink-0" />
+                )}
+              </button>
+              {openItems.includes(index) && (
+                <div className="px-6 pb-6">
+                  <p className="[font-family:'Inter',Helvetica] font-normal text-[#4d5256] text-[16.1px] tracking-[0] leading-[24.2px]">
+                    {faq.answer}
+                  </p>
                 </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white rounded-[8.05px] shadow-[0px_0px_40.25px_#002c7a1a] border-0">
-            <CardHeader>
-              <CardTitle className="[font-family:'Inter',Helvetica] font-black text-[#0c0c0c] text-[28.2px] tracking-[-0.81px] leading-[33.8px]">
-                Deal-Breakers
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {dealBreakerItems.map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <XIcon className="w-[18px] h-[18px] text-red-600 mt-1 flex-shrink-0" />
-                  <span className="[font-family:'Inter',Helvetica] font-bold text-[#4d5256] text-[18.1px] tracking-[0] leading-[27.2px]">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+              )}
+            </div>
+          ))}
         </div>
 
         <div className="text-center">
-          <div className="max-w-2xl mx-auto mb-8">
-            <h3 className="[font-family:'Caveat',Helvetica] font-bold text-[#0c0c0c] text-[36.2px] text-center tracking-[0] leading-[50.7px] mb-6">
-              If you fulfil the requirements above and would like a steady
-              supply of cases?
-            </h3>
-            <h4 className="[font-family:'Inter',Helvetica] font-black text-[#0c0c0c] text-[27px] tracking-[-0.81px] leading-[38.6px] mb-4">
-              Sign up for PI Track by My Legal Academy Today!
-            </h4>
-          </div>
-
-          <Button className="h-auto bg-[#0e823e] hover:bg-[#0c7235] text-white rounded-[3.02px] border border-[#00000021] shadow-[0px_4.03px_8.05px_#001c3826] px-8 py-6">
-            <span className="[font-family:'Inter',Helvetica] font-normal text-[35.2px] tracking-[0] leading-[48.3px] flex items-center gap-2">
+          <Button 
+            onClick={onShowEmailPopup}
+            className="h-auto bg-[#0e823e] hover:bg-[#0c7235] text-white rounded-[3.02px] border border-[#00000021] shadow-[0px_4.03px_8.05px_#001c3826] px-8 py-6"
+          >
+            <span className="[font-family:'Playfair_Display',serif] font-medium text-[35.2px] tracking-[0] leading-[48.3px] flex items-center gap-2">
               See If You Qualify
               <ArrowRight className="w-6 h-6" />
             </span>

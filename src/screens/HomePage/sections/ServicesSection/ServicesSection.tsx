@@ -66,7 +66,7 @@ export const ServicesSection = (): JSX.Element => {
     <section className="w-full py-5 px-4">
       <div className="max-w-[1147px] mx-auto">
         <div className="text-center mb-10">
-          <h2 className="[font-family:'Inter',Helvetica] font-black text-[#0c0c0c] text-[40.3px] tracking-[-0.81px] leading-[48.3px]">
+          <h2 className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-[40.3px] tracking-[-0.5px] leading-[48.3px]">
             Frequently Asked Questions
           </h2>
         </div>

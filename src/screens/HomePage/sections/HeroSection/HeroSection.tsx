@@ -1,72 +1,68 @@
 import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { ArrowRight } from "lucide-react";
-import image1 from '../../../../assets/images/image 1.png';
-import image2 from '../../../../assets/images/image  2.png';
-import image3 from '../../../../assets/images/image 3.png';
+import { ArrowRight, Play } from "lucide-react";
 import imagev1 from '../../../../assets/images/image v1.png';
 import imagev2 from '../../../../assets/images/image v2.png';
 import imagev3 from '../../../../assets/images/image v3.png';
 import imagev4 from '../../../../assets/images/image v4.png';
 import imagev5 from '../../../../assets/images/Image v5.png';
 import imagev6 from '../../../../assets/images/Image v6.png';
+
+interface HeroSectionProps {
+  onShowEmailPopup: () => void;
+}
+
 const testimonialData = [
   {
-    name: "James P. Friel",
-    category: "B2B",
-    image: imagev1 ,
+    name: "Brittani Glidden-Alhasoon, Esq.",
+    category: "How This Lawyer Signed 15 Clients From Just 67 Leads at $65 Per Lead",
+    image: imagev1,
+    link: "https://www.youtube.com/watch?v=QdsosUhDcwc&authuser=0",
   },
   {
-    name: "Jaime Cross",
-    category: "Ecommerce",
-    image: imagev2 ,
+    name: "Demarcus Ward, Esq.",
+    category: "How This Lawyer Signed 63 Clients and Achieved Nearly 700% ROI While Reclaiming His Quality of Life",
+    image: imagev2,
+    link: "https://www.youtube.com/watch?v=G3ebWMr8wyo&authuser=0",
   },
   {
-    name: "Garrett White",
-    category: "Coaching/Consulting",
-    image: imagev3 ,
+    name: "Dewnya Bazzi, Esq.",
+    category: "How This Lawyer Generated 800 Leads and Closed 30 Clients in Just 45 Days",
+    image: imagev3,
+    link: "https://www.youtube.com/watch?v=cRpr598QDKM",
   },
   {
-    name: "Yanni Fikaris",
-    category: "Local Small Business",
+    name: "Kweku Dafoor, Esq.",
+    category: "How This Lawyer Doubled His Revenue, Built a 10-Person Team, and Stepped Away From His Firm",
     image: imagev4,
+    link: "https://www.youtube.com/watch?v=2LMKLoTQJM0",
   },
   {
-    name: "Sarah Wells",
-    category: "Blogging/Affiliate",
+    name: "Moises Aguilar, Esq.",
+    category: "How This Lawyer Reached His Dream Life and Built a Firm That Runs Without Him",
     image: imagev5,
+    link: "https://www.youtube.com/watch?v=aHM6EwqHelg&authuser=0",
   },
   {
-    name: "Mindy & Mandy",
-    category: "Network Marketing",
+    name: "Paul Campson, Esq.",
+    category: "How This Lawyer Sealed His Firm to 70+ Clients and Cuts His Cost Per Lead to just $30",
     image: imagev6,
+    link: "https://www.youtube.com/watch?v=Q1xWvb8nyUc",
   },
 ];
 
-const successImages = [
-  [image1],
-[image2],
-  [image3],
-];
-
-export const HeroSection = (): JSX.Element => {
+export const HeroSection = ({ onShowEmailPopup }: HeroSectionProps): JSX.Element => {
   return (
-    <section className="w-full bg-[#f4f9fc] relative">
-      <div className="container mx-auto px-4 py-20">
+    <section className="w-full relative">
+      <div className="container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
           <header className="text-center mb-12">
             <div className="mb-4">
-              <h1 className="[font-family:'Inter',Helvetica] font-black text-[#0c0c0c] text-[40.3px] tracking-[-0.81px] leading-[48.3px] mb-2">
-                Want To Hear What Attorneys Like Yourself
+              <h1 className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-[36px] sm:text-[42px] md:text-[56px] lg:text-[64px] tracking-[-0.5px] leading-tight">
+                More of Our Members' Voices
               </h1>
-              <h1 className="[font-family:'Inter',Helvetica] font-black text-[#0c0c0c] text-[40.3px] tracking-[-0.81px] leading-[48.3px]">
-                Have To Say About My Legal Academy?
-              </h1>
-            </div>
-            <div className="[font-family:'Caveat',Helvetica] font-bold text-[#0c0c0c] text-[36.2px] tracking-[0] leading-[50.7px]">
-              Here You Go…
             </div>
           </header>
 
@@ -76,18 +72,30 @@ export const HeroSection = (): JSX.Element => {
               <Card key={index} className="border-0 shadow-none bg-transparent">
                 <CardContent className="p-0">
                   <div className="relative">
-                    <div
-                      className="w-full h-[201px] rounded-[8.05px] mb-6"
-                      style={{
-                        backgroundImage: `url(${testimonial.image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "50% 50%",
-                      }}
-                    />
+                    <a
+                      href={testimonial.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block cursor-pointer group"
+                    >
+                      <div className="relative w-full h-[201px] rounded-[8.05px] mb-6 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg overflow-hidden">
+                        <div
+                          className="w-full h-full"
+                          style={{
+                            backgroundImage: `url(${testimonial.image})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "50% 50%",
+                          }}
+                        />
+                        {/* Play Button Overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-40 transition-all duration-300">
+                          <div className="bg-white bg-opacity-90 rounded-full p-3 group-hover:bg-opacity-100 transition-all duration-300">
+                            <Play className="w-6 h-6 text-[#0e823e] fill-[#0e823e]" />
+                          </div>
+                        </div>
+                      </div>
+                    </a>
                     <div className="text-center">
-                      <h3 className="[font-family:'Inter',Helvetica] font-black text-[#0c0c0c] text-[20.1px] leading-[24.2px] mb-1">
-                        {testimonial.name}
-                      </h3>
                       <p className="[font-family:'Inter',Helvetica] font-normal text-[#4d5256] text-[16.1px] leading-[22.5px]">
                         {testimonial.category}
                       </p>
@@ -97,73 +105,22 @@ export const HeroSection = (): JSX.Element => {
               </Card>
             ))}
           </div>
- <div className="text-center max-w-4xl mx-auto pb-8">
-            <p className="[font-family:'Inter',Helvetica] font-normal italic text-[#60606b] text-[14.1px] leading-[19.7px]">
-              This program is subject to MLA&apos;s prerequisites and process
-              adherence. Spaces are limited. No guarantees of specific case
-              outcomes. Compliance with State Bar guidelines required.
-            </p>
-          </div>
+          
           {/* CTA Section */}
           <div className="text-center mb-8">
-            <Button className="bg-[#0e823e] hover:bg-[#0e823e]/90 text-white text-[35.2px] leading-[48.3px] h-auto px-8 py-6 rounded-[3.02px] border border-[#00000021] shadow-[0px_4.03px_8.05px_#001c3826] [font-family:'Inter',Helvetica] font-normal">
+            <Button 
+              onClick={onShowEmailPopup}
+              className="bg-[#0e823e] hover:bg-[#0e823e]/90 text-white text-[35.2px] leading-[48.3px] h-auto px-8 py-6 rounded-[3.02px] border border-[#00000021] shadow-[0px_4.03px_8.05px_#001c3826] [font-family:'Playfair_Display',serif] font-medium mb-4"
+            >
               <span className="mr-4">See If You Qualify</span>
               <ArrowRight className="w-6 h-6" />
             </Button>
+            <p className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-[14.1px] leading-[19.7px]">
+              Completely Done-For-You Case Generation System
+            </p>
           </div>
-
-          {/* Disclaimer */}
-         
         </div>
       </div>
-
-      {/* Black Success Story Section */}
-      <section className="bg-black py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            {/* Success Story Header */}
-            <div className="text-center mb-12">
-              <h2 className="[font-family:'Inter',Helvetica] font-black text-white text-[40.3px] tracking-[-0.81px] leading-[48.3px] mb-6">
-                You could be the next My Legal Academy Success Story
-              </h2>
-              <p className="[font-family:'Inter',Helvetica] font-bold text-[#ffffffcc] text-[18.1px] leading-[27.2px]">
-                To date, My Legal Academy has helped 1,400+ Law Firms scale
-                using our proven methods
-              </p>
-            </div>
-
-            {/* Success Images */}
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-[21px] mb-12">
-              {successImages.map((image, index) => (
-                <div key={index} className="flex-shrink-0">
-                  <img
-                    className={`${
-                      index === 0
-                        ? "w-[402px] h-[268px]"
-                        : index === 1
-                          ? "w-[405px] h-[269px] rounded-[5.03px]"
-                          : "w-[379px] h-[268px]"
-                    } object-cover`}
-                    alt={`Success story ${index + 1}`}
-                    src={image}
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Bottom CTA */}
-            <div className="text-center">
-              <Button className="bg-[#0e823e] hover:bg-[#0e823e]/90 text-white text-[35.2px] leading-[48.3px] h-auto px-8 py-6 rounded-[3.02px] border border-[#00000021] shadow-[0px_4.03px_8.05px_#001c3826] [font-family:'Inter',Helvetica] font-normal mb-4">
-                <span className="mr-4">See If You Qualify</span>
-                <ArrowRight className="w-6 h-6" />
-              </Button>
-              <p className="[font-family:'Inter',Helvetica] font-medium text-[#ffffff99] text-[14.1px] leading-[19.7px]">
-                Completely Done-For-You Case Generation System
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </section>
   );
 };
