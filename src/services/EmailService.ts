@@ -1,11 +1,20 @@
+import { UTMParams, getUTMParams } from '../utils/utmTracking';
+
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://pi-lander-staging-4lfcv3gql-irfad7s-projects.vercel.app/api'
+  ? 'https://pi-lander-6zu30w6fc-irfad7s-projects.vercel.app/api'
   : 'http://localhost:3001/api';
+
+const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/522295/uhnr1x6/';
 
 export interface EmailSubmission {
   email: string;
   source?: string;
   timestamp?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
 }
 
 export interface ApiResponse<T = any> {
@@ -18,6 +27,8 @@ export interface ApiResponse<T = any> {
 export class EmailService {
   static async submitEmail(email: string, source?: string): Promise<ApiResponse> {
     try {
+      const utmParams = getUTMParams();
+      
       const response = await fetch(`${API_BASE_URL}/submit-email`, {
         method: 'POST',
         headers: {
@@ -27,6 +38,7 @@ export class EmailService {
           email,
           source: source || 'landing-page',
           timestamp: new Date().toISOString(),
+          ...utmParams,
         }),
       });
 
