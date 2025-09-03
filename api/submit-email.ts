@@ -13,8 +13,8 @@ const emailSchema = z.object({
   utm_content: z.string().optional(),
 });
 
-// Zapier webhook URL
-const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/522295/uhnr1x6/';
+// Zapier webhook URL - should be moved to environment variable
+const ZAPIER_WEBHOOK_URL = process.env.ZAPIER_WEBHOOK_URL || 'https://hooks.zapier.com/hooks/catch/522295/uhnr1x6/';
 
 // Function to send webhook to Zapier
 async function sendZapierWebhook(submission: any) {
@@ -27,6 +27,8 @@ async function sendZapierWebhook(submission: any) {
       utm_term: submission.utm_term || '',
       utm_content: submission.utm_content || '',
     };
+
+    console.log('Sending webhook to Zapier:', webhookData);
 
     const response = await fetch(ZAPIER_WEBHOOK_URL, {
       method: 'POST',
@@ -51,10 +53,10 @@ async function sendZapierWebhook(submission: any) {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Enable CORS
+  // Enable CORS for all origins
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   // Handle preflight requests
   if (req.method === 'OPTIONS') {
@@ -64,6 +66,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     if (req.method === 'POST') {
+      // Parse and validate the request body
       const { email, source, utm_source, utm_medium, utm_campaign, utm_term, utm_content } = emailSchema.parse(req.body);
       
       // Create submission object
@@ -78,18 +81,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         utm_content,
       };
 
-      // Log submission
+      // Log submission for debugging
       console.log('New email submission:', submission);
 
-      // Send webhook to Zapier (fire and forget)
+      // Send webhook to Zapier (fire and forget - don't wait for response)
       sendZapierWebhook(submission).then(success => {
         if (success) {
           console.log('Zapier webhook sent successfully for:', email);
         } else {
           console.error('Zapier webhook failed for:', email);
         }
+      }).catch(error => {
+        console.error('Zapier webhook promise error:', error);
       });
 
+      // Return success response immediately
       return res.status(201).json({
         success: true,
         message: 'Email submitted successfully',
@@ -105,6 +111,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   } catch (error) {
     console.error('Email submission error:', error);
+    
+    // Handle Zod validation errors
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid request data',
+        error: error.errors.map(e => e.message).join(', ')
+      });
+    }
+    
     return res.status(400).json({
       success: false,
       message: 'Invalid email address',

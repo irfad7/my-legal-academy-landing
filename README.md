@@ -33,251 +33,160 @@ A modern, mobile-responsive landing page for personal injury law firms showcasin
   - Page views
   - Email submissions
   - Form interactions
-  - Conversions
+  - UTM parameter tracking
 
 ### **UTM Parameter Support**
-- `utm_source` - Traffic source (facebook, google, etc.)
-- `utm_medium` - Marketing medium (cpc, email, social, etc.)
-- `utm_campaign` - Campaign name
-- `utm_term` - Keywords
-- `utm_content` - Ad content variation
+- `utm_source`: Traffic source
+- `utm_medium`: Marketing medium
+- `utm_campaign`: Campaign name
+- `utm_term`: Keywords
+- `utm_content`: Content variation
 
-### **Webhook Data Structure**
-```json
-{
-  "email": "user@example.com",
-  "utm_source": "facebook",
-  "utm_medium": "cpc",
-  "utm_campaign": "pi_track_2024",
-  "utm_term": "personal injury lawyer",
-  "utm_content": "banner_ad"
-}
-```
-
-## 🔄 **User Flow**
-
-### **Hero CTA Flow**
-1. User enters email in hero form
-2. Email validation and submission
-3. UTM parameters captured automatically
-4. Webhook sent to Zapier
-5. Analytics event tracked
-6. **Immediate redirect** to JotForm
-
-### **Secondary CTA Flow**
-1. User clicks any CTA button
-2. Email popup appears
-3. User enters email
-4. UTM parameters captured automatically
-5. Webhook sent to Zapier
-6. Analytics event tracked
-7. Popup closes
-8. Redirect to JotForm after 1 second
-
-## 🛠 **Development Setup**
+## 🔧 **Development Setup**
 
 ### **Prerequisites**
 - Node.js 18+ 
 - npm or yarn
 - Git
 
-### **Installation**
+### **Local Development**
 ```bash
 # Clone the repository
-git clone [repository-url]
-cd "PI Lander"
+git clone <repository-url>
+cd pi-track-lander
 
 # Install dependencies
 npm install
 
 # Start development server
 npm run dev
+
+# Start API server (optional - for local testing)
+npm run server
 ```
 
-### **Available Scripts**
+### **Build for Production**
 ```bash
-npm run dev          # Start development server (localhost:5173)
-npm run build        # Build for production
+npm run build
+npm run preview
 ```
 
-## 🌍 **Environment Configuration**
+## 🚀 **Vercel Deployment**
 
-### **Production URLs**
-- **Frontend**: https://pi.mylegalacademy.com
-- **Zapier Webhook**: https://hooks.zapier.com/hooks/catch/522295/uhnr1x6/
-- **JotForm**: https://form.jotform.com/252374559938069
+### **Automatic Deployment**
+The project is configured for automatic deployment on Vercel. Push to the `main` branch to trigger deployment.
 
-### **Analytics Configuration**
-- **GA4 Property**: G-BPBP33H4JP
-- **Conversion Tracking**: Enabled
-- **Event Tracking**: Email submissions, form interactions
+### **Environment Variables**
+Set these in your Vercel dashboard:
+
+```env
+ZAPIER_WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/522295/uhnr1x6/
+NODE_ENV=production
+```
+
+### **Manual Deployment**
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel --prod
+```
 
 ## 📁 **Project Structure**
 
 ```
-src/
-├── components/ui/          # Reusable UI components
-│   ├── EmailForm.tsx      # Hero email form
-│   ├── EmailPopup.tsx     # Modal email capture
-│   └── ...
-├── screens/HomePage/       # Main landing page sections
-│   ├── CallToActionSection/    # Hero section with email form
-│   ├── AboutUsSection/         # About section with popup CTAs
-│   ├── FAQSection/             # FAQ section with popup CTAs
-│   └── ...
-├── services/
-│   └── EmailService.ts    # Email submission logic
-├── utils/
-│   ├── analytics.ts       # Google Analytics tracking
-│   └── utmTracking.ts     # UTM parameter capture
-└── ...
+├── api/                    # Vercel serverless functions
+│   ├── submit-email.ts    # Email submission endpoint
+│   └── health.ts          # Health check endpoint
+├── src/
+│   ├── components/        # React components
+│   ├── screens/          # Page components
+│   ├── services/         # Business logic
+│   └── utils/            # Utilities
+├── index.html            # Entry point
+├── vercel.json           # Vercel configuration
+└── package.json          # Dependencies
 ```
 
-## 🔧 **Configuration Files**
+## 🔌 **API Endpoints**
 
-### **Vercel Configuration**
-- `vercel.json` - Deployment settings
-- Automatic deployments from `main` branch
-- Custom domain: pi.mylegalacademy.com
+### **POST /api/submit-email**
+Submits email and UTM data to Zapier webhook.
 
-### **Build Configuration**
-- `vite.config.ts` - Vite build settings
-- `tailwind.config.js` - Tailwind CSS configuration
-- `tsconfig.json` - TypeScript configuration
-
-## 📈 **Performance & SEO**
-
-### **Performance Optimizations**
-- Vite build optimization
-- Image optimization
-- Lazy loading
-- Responsive design
-- Mobile-first approach
-
-### **SEO Features**
-- Meta tags optimization
-- Open Graph tags
-- Twitter Card support
-- Structured data
-- Fast loading times
-
-## 🔒 **Security & Privacy**
-
-### **Data Protection**
-- Email validation
-- HTTPS enforcement
-- No sensitive data storage
-- GDPR compliance considerations
-
-### **Webhook Security**
-- Zapier webhook authentication
-- Data encryption in transit
-- Secure API endpoints
-
-## 📱 **Responsive Design**
-
-### **Breakpoints**
-- Mobile: 320px - 768px
-- Tablet: 768px - 1024px
-- Desktop: 1024px+
-
-### **Mobile Optimizations**
-- Touch-friendly buttons
-- Optimized form inputs
-- Responsive typography
-- Mobile navigation
-
-## 🚀 **Deployment Process**
-
-### **Automatic Deployment**
-1. Push to `main` branch
-2. Vercel automatically builds and deploys
-3. Domain automatically updates
-4. Zero-downtime deployment
-
-### **Manual Deployment**
-```bash
-# Build locally
-npm run build
-
-# Deploy to Vercel
-vercel --prod
+**Request Body:**
+```json
+{
+  "email": "user@example.com",
+  "source": "hero-form",
+  "utm_source": "google",
+  "utm_medium": "cpc",
+  "utm_campaign": "pi-cases-2024"
+}
 ```
 
-## 📊 **Monitoring & Analytics**
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Email submitted successfully",
+  "data": { "email": "user@example.com" }
+}
+```
 
-### **Performance Monitoring**
-- Vercel Analytics
-- Core Web Vitals tracking
-- Error monitoring
-- Uptime monitoring
+### **GET /api/health**
+Health check endpoint for monitoring.
 
-### **Conversion Tracking**
-- Email submission tracking
-- Form interaction tracking
-- UTM parameter tracking
-- Conversion funnel analysis
+## 🐛 **Troubleshooting**
 
-## 🔄 **Update Process**
+### **Common Issues**
 
-### **For Content Updates**
-1. Make changes in development
-2. Test locally with `npm run dev`
-3. Push to `main` branch
-4. Automatic deployment to production
+1. **Build Failures**
+   - Ensure Node.js 18+ is installed
+   - Clear node_modules and reinstall: `rm -rf node_modules && npm install`
 
-### **For Feature Updates**
-1. Create feature branch
-2. Develop and test
-3. Merge to `main`
-4. Automatic deployment
+2. **API Not Working**
+   - Check Vercel function logs
+   - Verify environment variables are set
+   - Test with health endpoint: `/api/health`
 
-## 📞 **Support & Maintenance**
+3. **Email Submissions Not Reaching Zapier**
+   - Check webhook URL in environment variables
+   - Verify Zapier webhook is active
+   - Check Vercel function logs for errors
 
-### **Technical Support**
-- Vercel hosting support
-- Analytics configuration
-- Webhook troubleshooting
-- Performance optimization
+### **Debugging**
+- Use browser dev tools to check network requests
+- Check Vercel function logs in dashboard
+- Test API endpoints locally with `npm run server`
 
-### **Content Updates**
-- Copy changes
-- Image updates
-- Link updates
-- Form modifications
+## 📈 **Performance Optimization**
 
-## 🎯 **Success Metrics**
+- **Code Splitting**: Automatic with Vite
+- **Image Optimization**: WebP format support
+- **Caching**: Static assets cached by Vercel
+- **CDN**: Global edge network via Vercel
 
-### **Key Performance Indicators**
-- Email submission rate
-- Form conversion rate
-- Page load speed
-- Mobile usability
-- UTM parameter tracking accuracy
+## 🔒 **Security**
 
-### **Analytics Goals**
-- Track all email submissions
-- Monitor UTM parameter effectiveness
-- Measure conversion rates
-- Analyze user behavior
+- **CORS**: Properly configured for API endpoints
+- **Input Validation**: Zod schema validation
+- **HTTPS**: Enforced by Vercel
+- **Environment Variables**: Secure storage
+
+## 📞 **Support**
+
+For technical issues or deployment questions, check:
+1. Vercel deployment logs
+2. Browser console for frontend errors
+3. API function logs in Vercel dashboard
 
 ## 📝 **Changelog**
 
-### **Latest Updates**
-- ✅ Email form with immediate JotForm redirect
-- ✅ UTM parameter capture and webhook integration
-- ✅ Google Analytics 4 tracking
-- ✅ Responsive design optimization
-- ✅ Production deployment setup
-
-### **Planned Features**
-- A/B testing capabilities
-- Advanced analytics dashboard
-- CRM integration options
-- Performance optimizations
-
----
-
-**Built with ❤️ for My Legal Academy**
-
-*For technical support or questions, contact the development team.*
+### **v1.0.0** - Initial Release
+- Complete landing page with email capture
+- UTM parameter tracking
+- Zapier webhook integration
+- Google Analytics integration
+- Mobile-responsive design
+- Vercel deployment configuration
