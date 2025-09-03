@@ -6,9 +6,10 @@ A modern, mobile-responsive landing page for personal injury law firms showcasin
 
 ### **Staging Environment**
 - **Branch**: `staging`
-- **URL**: https://pi-lander-6zu30w6fc-irfad7s-projects.vercel.app
+- **URL**: https://pi-lander-2hb72zhj4-irfad7s-projects.vercel.app
 - **Purpose**: Testing and preview before production
 - **Backend API**: Email capture functionality with serverless functions
+- **Webhook Integration**: Automatic Zapier webhook on email submissions
 
 ### **Production Environment**
 - **Branch**: `main`
@@ -90,7 +91,7 @@ npm run build
 ## 🔧 Backend API
 
 ### **Email Capture Endpoints:**
-- **POST** `/api/submit-email` - Submit email address
+- **POST** `/api/submit-email` - Submit email address with UTM tracking
 - **GET** `/api/submit-email` - Get all submissions
 - **GET** `/api/health` - Health check
 
@@ -98,9 +99,28 @@ npm run build
 - ✅ **Email validation** with Zod schema
 - ✅ **Duplicate prevention** (same email check)
 - ✅ **Source tracking** (hero-form, popup-form)
+- ✅ **UTM parameter tracking** (utm_source, utm_medium, utm_campaign, utm_term, utm_content)
+- ✅ **Zapier webhook integration** - Automatic POST to https://hooks.zapier.com/hooks/catch/522295/uhnr1x6/
 - ✅ **Error handling** with proper HTTP status codes
 - ✅ **CORS enabled** for cross-origin requests
 - ✅ **Serverless deployment** on Vercel
+
+### **Webhook Payload:**
+```json
+{
+  "email": "user@example.com",
+  "utm_source": "google",
+  "utm_medium": "cpc",
+  "utm_campaign": "pi-track-2024",
+  "utm_term": "personal injury leads",
+  "utm_content": "banner-ad"
+}
+```
+
+### **UTM Parameters:**
+The system automatically extracts UTM parameters from the URL:
+- `?utm_source=google&utm_medium=cpc&utm_campaign=pi-track-2024`
+- All UTM fields are optional and hidden from the user interface
 
 ### **Local Development:**
 ```bash
