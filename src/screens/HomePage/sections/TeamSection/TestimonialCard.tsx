@@ -86,7 +86,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                     <div className="[font-family:'Inter',Helvetica] font-semibold text-[#0e823e] text-xl leading-tight tracking-wide">
                       {name}
                     </div>
-                    <div className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-base leading-tight mt-2">
+                    <div className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-base leading-tight mt-3 mb-4">
                       {location}
                     </div>
                   </div>

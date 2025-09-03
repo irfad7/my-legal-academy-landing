@@ -46,11 +46,11 @@ export const CallToActionSection = (): JSX.Element => {
           />
 
           {/* Bullet Points */}
-          <div className="flex flex-col items-start space-y-3 md:space-y-4 mt-4 md:mt-6 mb-0 px-4">
+          <div className="flex flex-col items-center space-y-3 md:space-y-4 mt-4 md:mt-6 mb-0 px-4">
             {bulletPoints.map((point, index) => (
-              <div key={index} className="flex items-center gap-3 w-full justify-start">
+              <div key={index} className="flex items-center gap-3 w-full justify-center">
                 <CheckCircle className="w-5 md:w-6 h-5 md:h-6 text-green-600 flex-shrink-0" />
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#0c0c0c] text-[20px] md:text-[22px] lg:text-[24px] leading-relaxed">
+                <span className="[font-family:'Inter',Helvetica] font-normal text-[#0c0c0c] text-[20px] md:text-[22px] lg:text-[24px] leading-relaxed text-center">
                   {point}
                 </span>
               </div>
