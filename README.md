@@ -6,8 +6,9 @@ A modern, mobile-responsive landing page for personal injury law firms showcasin
 
 ### **Staging Environment**
 - **Branch**: `staging`
-- **URL**: https://pi-lander-staging-4lfcv3gql-irfad7s-projects.vercel.app
+- **URL**: https://pi-lander-6zu30w6fc-irfad7s-projects.vercel.app
 - **Purpose**: Testing and preview before production
+- **Backend API**: Email capture functionality with serverless functions
 
 ### **Production Environment**
 - **Branch**: `main`
@@ -82,6 +83,33 @@ npm run build
 - **Vite** for build tooling
 - **Vercel** for deployment
 - **GitHub** for version control
+- **Node.js/Express** for backend API
+- **Zod** for data validation
+- **Serverless Functions** for email capture
+
+## 🔧 Backend API
+
+### **Email Capture Endpoints:**
+- **POST** `/api/submit-email` - Submit email address
+- **GET** `/api/submit-email` - Get all submissions
+- **GET** `/api/health` - Health check
+
+### **Features:**
+- ✅ **Email validation** with Zod schema
+- ✅ **Duplicate prevention** (same email check)
+- ✅ **Source tracking** (hero-form, popup-form)
+- ✅ **Error handling** with proper HTTP status codes
+- ✅ **CORS enabled** for cross-origin requests
+- ✅ **Serverless deployment** on Vercel
+
+### **Local Development:**
+```bash
+# Start frontend
+npm run dev
+
+# Start backend API (optional)
+npm run api:dev
+```
 
 ## 📋 Environment Management
 
