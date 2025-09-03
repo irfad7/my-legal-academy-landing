@@ -1,4 +1,5 @@
 import { UTMParams, getUTMParams } from '../utils/utmTracking';
+import { trackEmailSubmission } from '../utils/analytics';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
   ? 'https://pi-lander-6zu30w6fc-irfad7s-projects.vercel.app/api'
@@ -47,6 +48,9 @@ export class EmailService {
       if (!response.ok) {
         throw new Error(data.message || 'Failed to submit email');
       }
+
+      // Track successful email submission
+      trackEmailSubmission(source || 'landing-page', email);
 
       return data;
     } catch (error) {
