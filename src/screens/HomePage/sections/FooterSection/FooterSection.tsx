@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Play } from "lucide-react";
-import revenuce from '../../../../assets/imagES/revenue 2x.png';
+import revenuce from '../../../../assets/images/revenue 2x.png';
 
 export const FooterSection = (): JSX.Element => {
   return (
