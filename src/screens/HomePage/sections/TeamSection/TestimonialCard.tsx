@@ -82,14 +82,6 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                     alt={name}
                     src={imageSrc}
                   />
-                  <div className="mt-4 text-center">
-                    <div className="[font-family:'Inter',Helvetica] font-semibold text-[#0e823e] text-xl leading-tight tracking-wide">
-                      {name}
-                    </div>
-                    <div className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-base leading-tight mt-3 mb-4">
-                      {location}
-                    </div>
-                  </div>
                 </div>
               ) : (
                 <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex flex-col items-center justify-center">
@@ -100,6 +92,16 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                   </div>
                 </div>
               )}
+            </div>
+
+            {/* Name and Location - Outside image container */}
+            <div className="text-center w-full">
+              <div className="[font-family:'Inter',Helvetica] font-semibold text-[#0e823e] text-xl leading-tight tracking-wide">
+                {name}
+              </div>
+              <div className="[font-family:'Inter',Helvetica] font-medium text-[#4d5256] text-base leading-tight mt-2 mb-6">
+                {location}
+              </div>
             </div>
 
             <div className="flex-1 space-y-6 w-full">
