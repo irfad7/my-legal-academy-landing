@@ -23,7 +23,7 @@ const testimonialData = [
     roi: "630%",
     imagePosition: "right" as const,
     imageSrc: mckinny,
-    caseStudyCategory: "Personal Injury, criminal defense, business.",
+    caseStudyCategory: "Personal injury, criminal defense, business",
   },
   {
     name: "Bridgette Williams, Esq.",
@@ -53,7 +53,7 @@ const testimonialData = [
     roi: "504%",
     imagePosition: "right" as const,
     imageSrc: dallas,
-    caseStudyCategory: "Wrongful Death, Car Accident, and more.",
+    caseStudyCategory: "Wrongful death, car accident, and more",
   },
   {
     name: "Jamie Alvarez, Esq.",
@@ -68,7 +68,7 @@ const testimonialData = [
     roi: "354%",
     imagePosition: "left" as const,
     imageSrc: jamie,
-    caseStudyCategory: "Property insurance and Personal injury claims",
+    caseStudyCategory: "Property insurance and personal injury claims",
   },
   {
     name: "Tim Dominguez, Esq.",
@@ -83,7 +83,7 @@ const testimonialData = [
     roi: "789%",
     imagePosition: "right" as const,
     imageSrc: tim,
-    caseStudyCategory: "Personal Injury, car, truck, rideshare",
+    caseStudyCategory: "Personal injury, car, truck, rideshare",
   },
   {
     name: "Brittani Glidden, Esq.",
@@ -96,7 +96,7 @@ const testimonialData = [
     costPerAcquisition: "$291",
     imagePosition: "left" as const,
     imageSrc: brittani,
-    caseStudyCategory: "PI, criminal, family, immigration.",
+    caseStudyCategory: "Personal injury, criminal, family, immigration",
   },
   {
     name: "Malik Hannah, Esq.",
@@ -111,7 +111,7 @@ const testimonialData = [
     roi: "1,679%",
     imagePosition: "right" as const,
     imageSrc: malik,
-    caseStudyCategory: "Personal Injury, car accidents",
+    caseStudyCategory: "Personal injury, car accidents",
   },
   {
     name: "Byron Bailey, Esq.",
@@ -126,7 +126,7 @@ const testimonialData = [
     roi: "1,204%",
     imagePosition: "left" as const,
     imageSrc: byron,
-    caseStudyCategory: "Personal Injury lawyers: car, truck, rideshare, slips, bites.",
+    caseStudyCategory: "Personal injury, car, truck, rideshare, slips, bites",
   },
 ];
 

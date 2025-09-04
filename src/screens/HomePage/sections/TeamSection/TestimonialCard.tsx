@@ -57,7 +57,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
               {location}
             </div>
             {caseStudyCategory && (
-              <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[18px] leading-[24px] mt-2">
+              <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[18px] leading-[24px] mt-2 italic">
                 {caseStudyCategory}
               </div>
             )}
@@ -110,7 +110,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 {location}
               </div>
               {caseStudyCategory && (
-                <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-sm leading-tight mt-2">
+                <div className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-sm leading-tight mt-2 italic">
                   {caseStudyCategory}
                 </div>
               )}
