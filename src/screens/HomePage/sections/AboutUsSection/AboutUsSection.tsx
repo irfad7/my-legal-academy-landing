@@ -51,12 +51,12 @@ export const AboutUsSection = ({ onShowEmailPopup }: AboutUsSectionProps): JSX.E
         </div>
 
         {/* Heading */}
-        <div className="text-center mb-4 md:mb-6">
-          <h2 className="text-center text-[48px] sm:text-[52px] md:text-[56px] lg:text-[64px] font-medium leading-tight tracking-[-0.5px] text-[#0c0c0c] [font-family:'Playfair_Display',serif]">
-            Top Personal Injury Firms <br />
-            Trust PI Track
-          </h2>
-        </div>
+                  <div className="text-center mb-4 md:mb-6">
+            <h2 className="text-center text-[48px] sm:text-[52px] md:text-[56px] lg:text-[64px] font-medium leading-tight tracking-[-0.5px] text-[#0c0c0c] [font-family:'Playfair_Display',serif] pb-1">
+              Top Personal Injury Firms <br />
+              Trust My Legal Academy
+            </h2>
+          </div>
 
         {/* Testimonials */}
         <div className="relative mt-6 mb-8 md:mt-8 md:mb-10">

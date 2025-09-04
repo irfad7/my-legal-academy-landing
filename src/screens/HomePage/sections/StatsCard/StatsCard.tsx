@@ -8,7 +8,7 @@ const statisticsData = [
     sublabel: "Cases Per Month",
   },
   {
-    value: "$63k",
+    value: "$63,300",
     label: "Average",
     sublabel: "Monthly Revenue",
   },
@@ -22,7 +22,7 @@ const statisticsData = [
 export const StatsCard = (): JSX.Element => {
   const [animatedValues, setAnimatedValues] = useState<Record<string, number>>({
     "15": 0,
-    "$63k": 0,
+    "$63,300": 0,
     "873%": 0,
   });
 
@@ -34,7 +34,7 @@ export const StatsCard = (): JSX.Element => {
           let allComplete = true;
           
           Object.keys(newValues).forEach(key => {
-            const target = key === "$63k" ? 63 : key === "873%" ? 873 : 15;
+            const target = key === "$63,300" ? 63300 : key === "873%" ? 873 : 15;
             if (newValues[key] < target) {
               newValues[key] = Math.min(newValues[key] + Math.ceil(target / 30), target);
               allComplete = false;
@@ -56,7 +56,7 @@ export const StatsCard = (): JSX.Element => {
   }, []);
 
   const formatValue = (key: string, value: number) => {
-    if (key === "$63k") return `$${value}k`;
+    if (key === "$63,300") return `$${value.toLocaleString()}`;
     if (key === "873%") return `${value}%`;
     return value.toString();
   };

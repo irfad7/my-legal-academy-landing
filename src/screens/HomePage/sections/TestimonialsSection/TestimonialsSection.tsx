@@ -50,7 +50,7 @@ Built for PI Firms Serious About Scaling
         </div>
 
         <h1 className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-[36px] sm:text-[42px] md:text-[56px] lg:text-[64px] tracking-[-0.5px] leading-tight max-w-6xl mb-0">
-          Real Lawyers, Real Results with PI Track
+          Real Lawyers, Real Results
         </h1>
       </div>
     </section>
