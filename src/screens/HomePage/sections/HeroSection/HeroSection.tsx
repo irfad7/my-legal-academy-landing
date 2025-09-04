@@ -116,7 +116,7 @@ export const HeroSection = ({ onShowEmailPopup }: HeroSectionProps): JSX.Element
               <ArrowRight className="w-6 h-6" />
             </Button>
             <p className="[font-family:'Playfair_Display',serif] font-medium text-[#4d5256] text-[14.1px] leading-[19.7px] -mt-0.5">
-              Completely Done-For-You Case Generation System
+              Completely Done-For-You Case-Generation System
             </p>
           </div>
         </div>

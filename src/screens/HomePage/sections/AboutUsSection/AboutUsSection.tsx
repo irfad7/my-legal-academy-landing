@@ -128,7 +128,7 @@ export const AboutUsSection = ({ onShowEmailPopup }: AboutUsSectionProps): JSX.E
             <ArrowRight className="h-6 w-6" />
           </Button>
           <p className="mt-2 text-[14.1px] font-medium leading-relaxed text-[#60606b] [font-family:'Playfair_Display',serif]">
-            Completely Done-For-You Case Generation System
+            Completely Done-For-You Case-Generation System
           </p>
         </div>
       </div>

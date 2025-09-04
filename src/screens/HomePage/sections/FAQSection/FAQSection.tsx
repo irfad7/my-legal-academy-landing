@@ -156,7 +156,7 @@ export const FAQSection = ({ onShowEmailPopup }: FAQSectionProps): JSX.Element =
           </Button>
 
           <p className="text-[#60606b] [font-family:'Playfair_Display',serif] font-medium text-[14.1px] tracking-[0] leading-[19.7px] mt-2">
-            Completely Done-For-You Case Generation System
+            Completely Done-For-You Case-Generation System
           </p>
         </div>
       </div>
