@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { CheckCircle } from "lucide-react";
+import { formatCurrency } from "../../../../lib/utils";
 
 
 interface TestimonialCardProps {
@@ -117,8 +118,11 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
             </div>
 
             <div className="flex-1 space-y-6 w-full">
-              <div className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-3xl tracking-[-0.5px] leading-tight text-center">
-                {achievement}
+              <div className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-3xl tracking-[-0.5px] leading-tight text-center"
+                dangerouslySetInnerHTML={{ 
+                  __html: achievement.startsWith('$') ? formatCurrency(achievement) : achievement 
+                }}
+              >
               </div>
 
               <div className="[font-family:'Playfair_Display',serif] font-normal text-[#4d5256] text-base leading-relaxed italic text-center">
@@ -145,8 +149,10 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                       className={`font-bold ${
                         stat.highlight ? "text-[#0e823e]" : "text-[#0c0c0c]"
                       }`}
+                      dangerouslySetInnerHTML={{ 
+                        __html: stat.value.startsWith('$') ? formatCurrency(stat.value) : stat.value 
+                      }}
                     >
-                      {stat.value}
                     </span>
                   </div>
                 ))}
@@ -160,8 +166,11 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
           {imagePosition === "left" && <ImageComponent />}
 
           <div className="flex-1 space-y-8">
-            <div className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-[48px] tracking-[-0.5px] leading-[56px]">
-              {achievement}
+            <div className="[font-family:'Playfair_Display',serif] font-medium text-[#0c0c0c] text-[48px] tracking-[-0.5px] leading-[56px]"
+              dangerouslySetInnerHTML={{ 
+                __html: achievement.startsWith('$') ? formatCurrency(achievement) : achievement 
+              }}
+            >
             </div>
 
                                       <div className="[font-family:'Playfair_Display',serif] font-normal text-[#4d5256] text-[22px] leading-[32px] italic">
@@ -188,8 +197,10 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                     className={`font-bold ${
                       stat.highlight ? "text-[#0e823e]" : "text-[#0c0c0c]"
                     }`}
+                    dangerouslySetInnerHTML={{ 
+                      __html: stat.value.startsWith('$') ? formatCurrency(stat.value) : stat.value 
+                    }}
                   >
-                    {stat.value}
                   </span>
                 </div>
               ))}

@@ -7,6 +7,30 @@
   }
 }
 
+/* Performance optimizations for smooth scrolling */
+@layer utilities {
+  .gpu-accelerated {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .scroll-optimized {
+    will-change: scroll-position;
+  }
+}
+
+/* Global comma styling */
+@layer base {
+  .comma-styled {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    letter-spacing: -0.025em;
+    font-size: 0.9em;
+    font-weight: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
+  }
+}
+
 :root {
   --animate-spin: spin 1s linear infinite;
 }

@@ -40,7 +40,7 @@ export const CallToActionSection = (): JSX.Element => {
             ROI.
           </p> */}
                       <p className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] 
-  text-[20px] md:text-[22px] lg:text-[24px] text-center leading-relaxed max-w-4xl mt-4 md:mt-6 mx-auto px-4">
+  text-[24px] md:text-[26px] lg:text-[28px] text-center leading-relaxed max-w-4xl mt-4 md:mt-6 mx-auto px-4">
   A proven case-generation system trusted by PI firms <br />
   to deliver high-value car accident cases consistently at trackable ROI.
 </p>
@@ -56,9 +56,9 @@ export const CallToActionSection = (): JSX.Element => {
           {/* Mobile Layout */}
           <div className="flex flex-col items-center space-y-3 mt-4 mb-0 px-4 lg:hidden">
             {bulletPoints.map((point, index) => (
-              <div key={index} className="flex items-start gap-3 w-full max-w-md">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                <span className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[20px] leading-relaxed text-left">
+              <div key={index} className="flex items-center gap-3 w-full max-w-md">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                <span className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[22px] leading-relaxed text-left">
                   {point}
                 </span>
               </div>
@@ -68,9 +68,9 @@ export const CallToActionSection = (): JSX.Element => {
           {/* Desktop Layout */}
           <div className="hidden lg:flex flex-col items-start space-y-4 mt-6 mb-0 px-4 w-full max-w-3xl">
             {bulletPoints.map((point, index) => (
-              <div key={index} className="flex items-start gap-3 w-full">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
-                <span className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[20px] leading-relaxed text-left">
+              <div key={index} className="flex items-center gap-3 w-full">
+                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                <span className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[22px] leading-relaxed text-left">
                   {point}
                 </span>
               </div>

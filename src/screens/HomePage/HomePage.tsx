@@ -35,7 +35,7 @@ export const HomePage = (): JSX.Element => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-white via-[#d7e3f3]/60 to-white">
+    <div className="w-full min-h-screen bg-gradient-to-br from-white via-[#d7e3f3]/60 to-white scroll-optimized">
       {showBanner && (
         <div className="w-full bg-[#0e823e] border-b border-[#e6edf2] relative">
           <div className="container mx-auto px-4 py-3">
