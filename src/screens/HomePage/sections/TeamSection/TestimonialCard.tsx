@@ -49,6 +49,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
             className="w-full h-full object-cover rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
             alt={name}
             src={imageSrc}
+            draggable={false}
           />
                     <div className="mt-4 text-center">
             <div className="[font-family:'Playfair_Display',serif] font-semibold text-[#0e823e] text-[28px] leading-[36px] tracking-wide">
@@ -89,6 +90,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
                     className="w-full max-w-[300px] h-auto object-contain rounded-lg shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl"
                     alt={name}
                     src={imageSrc}
+                    draggable={false}
                   />
                 </div>
               ) : (

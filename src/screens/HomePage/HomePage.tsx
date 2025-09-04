@@ -54,7 +54,7 @@ export const HomePage = (): JSX.Element => {
           <CallToActionSection />
           <div className="absolute top-4 md:top-8 left-1/2 transform -translate-x-1/2 z-10 pb-8 md:pb-12 lg:pb-16">
             <div className="flex items-center">
-              <img src={logo} alt="Company Logo" className="h-8 md:h-12 lg:h-14 w-auto object-contain" />
+              <img src={logo} alt="Company Logo" className="h-8 md:h-12 lg:h-14 w-auto object-contain" draggable={false} />
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export const HomePage = (): JSX.Element => {
 
           {/* Logo */}
           <div>
-            <img src={logo} alt="Company Logo" className="h-8 w-auto object-contain" />
+            <img src={logo} alt="Company Logo" className="h-8 w-auto object-contain" draggable={false} />
           </div>
 
           {/* Address */}

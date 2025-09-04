@@ -43,7 +43,7 @@ export const TestimonialsSection = (): JSX.Element => {
           <div className="flex justify-center items-center gap-4">
            
                <div className="pt-2">
-                 <img src={downicon} alt="" />
+                 <img src={downicon} alt="" draggable={false} />
                </div>
           </div>
           {/* <span className="text-gray-600 font-medium">Completely Done-For-You Case Generation System</span> */}

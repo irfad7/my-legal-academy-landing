@@ -1,5 +1,5 @@
 import { UTMParams, getUTMParams } from '../utils/utmTracking';
-import { trackEmailSubmission } from '../utils/analytics';
+import { trackLeadFormSubmit } from '../utils/analytics';
 
 // Local API endpoint for email submission
 const API_ENDPOINT = '/api/submit-email';
@@ -80,8 +80,8 @@ export class EmailService {
       if (apiSuccess) {
         console.log('Email submitted successfully via API for:', email);
         
-        // Track successful email submission
-        trackEmailSubmission(source || 'landing-page', email);
+        // Track successful email submission with funnel tracking
+        trackLeadFormSubmit(source || 'landing-page', email);
 
         return {
           success: true,

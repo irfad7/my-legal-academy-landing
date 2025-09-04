@@ -43,7 +43,7 @@ export const AboutUsSection = ({ onShowEmailPopup }: AboutUsSectionProps): JSX.E
         <div className="text-center mb-4 md:mb-6">
           <div className="mb-3 flex items-center justify-center gap-2">
             {[...Array(5)].map((_, i) => (
-              <img key={i} src={starIcon} alt="" className="w-[26px] object-contain" />
+              <img key={i} src={starIcon} alt="" className="w-[26px] object-contain" draggable={false} />
             ))}
           </div>
 
@@ -74,6 +74,7 @@ export const AboutUsSection = ({ onShowEmailPopup }: AboutUsSectionProps): JSX.E
                       alt={`${t.name} headshot`}
                       className="h-32 w-32 sm:h-40 sm:w-40 md:h-44 md:w-44 lg:h-56 lg:w-56 object-cover rounded-full"
                       style={{ objectPosition: 'center 30%' }}
+                      draggable={false}
                     />
                   </div>
 

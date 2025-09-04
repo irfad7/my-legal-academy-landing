@@ -14,7 +14,7 @@ export const FooterSection = (): JSX.Element => {
                   <div className="w-full max-w-[550px] h-[300px] sm:h-[400px] lg:h-[450px] flex items-center justify-center">
                     <div className="text-center p-4 sm:p-6 lg:p-8 relative group cursor-pointer" onClick={() => window.open('https://www.youtube.com/watch?v=d2teDjJa2MU', '_blank')}>
                       <div className="relative">
-                        <img src={revenuce} alt="Stephen A. Smith testimonial video thumbnail" className="w-full h-full object-cover rounded-lg transition-transform group-hover:scale-105" />
+                        <img src={revenuce} alt="Stephen A. Smith testimonial video thumbnail" className="w-full h-full object-cover rounded-lg transition-transform group-hover:scale-105" draggable={false} />
                         <div className="absolute inset-0 flex items-center justify-center">
                           <div className="bg-black bg-opacity-50 rounded-full p-3 sm:p-4 group-hover:bg-opacity-70 transition-all">
                             <Play className="w-6 h-6 sm:w-8 sm:h-8 text-white fill-white" />
