@@ -44,12 +44,14 @@ export const EmailForm: React.FC<EmailFormProps> = ({
         
         // For hero form, redirect immediately without delay or success message
         if (source === "hero-form") {
-          window.open('https://form.jotform.com/252374559938069', '_blank');
+          const jotformUrl = `https://form.jotform.com/252374559938069?email=${encodeURIComponent(email)}`;
+          window.open(jotformUrl, '_blank');
         } else {
           // For other forms, show success message and redirect with delay
           setIsSubmitted(true);
           setTimeout(() => {
-            window.open('https://form.jotform.com/252374559938069', '_blank');
+            const jotformUrl = `https://form.jotform.com/252374559938069?email=${encodeURIComponent(email)}`;
+            window.open(jotformUrl, '_blank');
           }, 1000);
           setTimeout(() => setIsSubmitted(false), 3000);
         }
