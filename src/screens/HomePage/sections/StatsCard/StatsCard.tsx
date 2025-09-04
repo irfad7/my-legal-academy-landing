@@ -8,7 +8,7 @@ const statisticsData = [
     sublabel: "Cases Per Month",
   },
   {
-    value: "$63,300",
+    value: "$63,000",
     label: "Average",
     sublabel: "Monthly Revenue",
   },
@@ -22,7 +22,7 @@ const statisticsData = [
 export const StatsCard = (): JSX.Element => {
   const [animatedValues, setAnimatedValues] = useState<Record<string, number>>({
     "15": 0,
-    "$63,300": 0,
+    "$63,000": 0,
     "873%": 0,
   });
 
@@ -34,7 +34,7 @@ export const StatsCard = (): JSX.Element => {
           let allComplete = true;
           
           Object.keys(newValues).forEach(key => {
-            const target = key === "$63,300" ? 63300 : key === "873%" ? 873 : 15;
+            const target = key === "$63,000" ? 63000 : key === "873%" ? 873 : 15;
             if (newValues[key] < target) {
               newValues[key] = Math.min(newValues[key] + Math.ceil(target / 30), target);
               allComplete = false;
@@ -56,7 +56,10 @@ export const StatsCard = (): JSX.Element => {
   }, []);
 
   const formatValue = (key: string, value: number) => {
-    if (key === "$63,300") return `$${value.toLocaleString()}`;
+    if (key === "$63,000") {
+      const formattedValue = `$${Math.floor(value / 1000)},000`;
+      return formattedValue.replace(',', '<span class="font-sans tracking-tighter">,</span>');
+    }
     if (key === "873%") return `${value}%`;
     return value.toString();
   };
@@ -76,7 +79,13 @@ export const StatsCard = (): JSX.Element => {
               {statisticsData.map((stat, index) => (
                 <div key={index} className="flex-1 text-center group">
                   <div className="[font-family:'Playfair_Display',serif] font-normal text-[#0e823e] text-[32px] sm:text-[40px] md:text-[50px] lg:text-[70px] leading-tight mb-3 md:mb-6 transition-all duration-300 group-hover:scale-110 group-hover:text-[#0d6e33]">
-                    {formatValue(stat.value, animatedValues[stat.value])}
+                    {stat.value === "$63,000" ? (
+                      <span dangerouslySetInnerHTML={{ 
+                        __html: formatValue(stat.value, animatedValues[stat.value]) 
+                      }} />
+                    ) : (
+                      formatValue(stat.value, animatedValues[stat.value])
+                    )}
                   </div>
                   <div className="space-y-0">
                     <div className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[26px] leading-relaxed transition-colors duration-300 group-hover:text-[#0e823e]">
