@@ -12,7 +12,7 @@ export const TermsAndConditionsPage = (): JSX.Element => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12 lg:py-16">
         <div className="bg-white rounded-[12px] shadow-[0_8px_32px_rgba(7,5,19,0.3)] p-6 sm:p-8 md:p-10 lg:p-12">
           <div className="mb-8">
-            <Link to="/my-legal-academy" className="text-[#9779fc] hover:text-[#7d5ef0] transition-colors [font-family:'Playfair_Display',serif]">
+            <Link to="/" className="text-[#9779fc] hover:text-[#7d5ef0] transition-colors [font-family:'Playfair_Display',serif]">
               ← Back to Home
             </Link>
           </div>
