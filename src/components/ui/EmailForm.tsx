@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "./button";
 import { Input } from "./input";
-import { ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, AlertCircle, Sparkles } from "lucide-react";
 import { EmailService } from "../../services/EmailService";
 
 interface EmailFormProps {
@@ -76,7 +76,7 @@ export const EmailForm: React.FC<EmailFormProps> = ({
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`flex flex-col sm:flex-row items-center gap-4 w-full max-w-3xl ${className}`}>
+    <form onSubmit={handleSubmit} className={`flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full max-w-3xl ${className}`}>
       <div className="flex-1 w-full">
         <Input
           type="email"
@@ -85,7 +85,7 @@ export const EmailForm: React.FC<EmailFormProps> = ({
           placeholder={placeholder}
           required
           disabled={isSubmitting}
-                          className="h-14 md:h-16 lg:h-18 text-base md:text-lg lg:text-xl border-2 border-[#d5d5d5] rounded-[4px] [font-family:'Playfair_Display',serif] px-3 md:px-4"
+          className="h-12 sm:h-14 md:h-16 text-base md:text-lg lg:text-xl border border-[#e0e0e0] bg-white rounded-[8px] [font-family:'Playfair_Display',serif] px-4 md:px-5 py-3 md:py-4 text-[#070513] placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#9779fc]/20 focus:border-[#9779fc] shadow-sm transition-all"
         />
         {error && (
           <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">
@@ -97,10 +97,11 @@ export const EmailForm: React.FC<EmailFormProps> = ({
       <Button 
         type="submit"
         disabled={isSubmitting}
-        className="h-14 md:h-16 lg:h-18 px-6 md:px-10 lg:px-12 bg-[#0e823e] hover:bg-[#0c7236] disabled:bg-gray-400 text-white text-lg md:text-xl lg:text-2xl [font-family:'Playfair_Display',serif] font-medium rounded-[3px] border border-[#00000021] shadow-[0px_4px_16px_2px_#002c7a33] flex items-center gap-2 md:gap-3 w-full sm:w-auto"
+        className="group h-12 sm:h-14 md:h-16 px-5 sm:px-6 md:px-8 lg:px-10 bg-[#9779fc] hover:bg-[#7d5ef0] disabled:bg-gray-400 text-white text-base sm:text-lg md:text-xl lg:text-2xl [font-family:'Playfair_Display',serif] font-medium rounded-[10px] border-0 shadow-[0_2px_8px_rgba(151,121,252,0.3)] flex items-center gap-2 sm:gap-3 w-full sm:w-auto transition-all whitespace-nowrap"
       >
-        {isSubmitting ? "Submitting..." : buttonText}
-        <ArrowRight className="w-5 md:w-6 h-5 md:h-6" />
+        <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 group-hover:rotate-12 transition-transform" />
+        <span>{isSubmitting ? "Submitting..." : buttonText}</span>
+        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
       </Button>
     </form>
   );

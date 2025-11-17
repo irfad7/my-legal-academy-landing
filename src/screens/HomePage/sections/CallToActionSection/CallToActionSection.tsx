@@ -41,7 +41,7 @@ export const CallToActionSection = (): JSX.Element => {
           </p> */}
                       <p className="[font-family:'Playfair_Display',serif] font-normal text-[#0c0c0c] 
   text-[24px] md:text-[26px] lg:text-[28px] text-center leading-relaxed max-w-4xl mt-4 md:mt-6 mx-auto px-4">
-  A proven case-generation system trusted by PI firms <br />
+  A proven done-for-you case-generation system trusted by PI firms <br />
   to deliver high-value car accident cases consistently at trackable ROI.
 </p>
 

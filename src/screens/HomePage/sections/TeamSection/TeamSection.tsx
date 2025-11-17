@@ -27,7 +27,7 @@ const testimonialData = [
   },
   {
     name: "Bridgette Williams, Esq.",
-    location: "Los Angeles, California",
+    location: "Dallas, Texas",
     achievement: "$240,000 in 5 months",
     quote:
       "My experience with My Legal Academy has been fantastic. They have been absolutely wonderful with running our ads and giving me continuous updates and recommendations. They are dedicated to making sure my firm grows.",
